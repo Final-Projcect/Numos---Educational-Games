@@ -1,0 +1,198 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Mummy
+  - leftlimit
+  - RightLimit
+  - TopLimit
+  - DownLimit
+  - DiffrentSecne
+  - Instruction
+  - Ins
+  - Brick
+  - Pyrmid
+  - TailorStufff
+  - Mrppayon
+  - Cave
+  - Obstic
+  - Shock
+  - ShockWithYarm
+  - Handler
+  - rabbit
+  - try
+  - coin
+  - star
+  - signNum
+  - key
+  - ship
+  - stone
+  - snow
+  - Lava
+  - 110
+  - 1020
+  - 2030
+  - 011
+  - 2010
+  - 3020
+  - jumpstand
+  - water
+  - king
+  - gold
+  - leaf
+  - stand
+  - posion
+  - allpotion
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Groumd
+  - secondCamara
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: BackGround
+    uniqueID: 2074120153
+    locked: 0
+  - name: HileFarAway
+    uniqueID: 2682160339
+    locked: 0
+  - name: Skies
+    uniqueID: 2630745389
+    locked: 0
+  - name: MidHile
+    uniqueID: 768630935
+    locked: 0
+  - name: Trees
+    uniqueID: 3772529393
+    locked: 0
+  - name: TreeMid
+    uniqueID: 1038283921
+    locked: 0
+  - name: Pyramid
+    uniqueID: 3975595741
+    locked: 0
+  - name: Reed
+    uniqueID: 1909314097
+    locked: 0
+  - name: TreesMiddle
+    uniqueID: 1302399131
+    locked: 0
+  - name: LanderyTree
+    uniqueID: 162860565
+    locked: 0
+  - name: WalkingYard
+    uniqueID: 1111984255
+    locked: 0
+  - name: Places
+    uniqueID: 2704248357
+    locked: 0
+  - name: Shockes
+    uniqueID: 2529119113
+    locked: 0
+  - name: LaFarmaBackGround
+    uniqueID: 3385144687
+    locked: 0
+  - name: LaFarmaGround
+    uniqueID: 4024772331
+    locked: 0
+  - name: LaFarmaSlaves
+    uniqueID: 2691891871
+    locked: 0
+  - name: LaFarmaModelStamd
+    uniqueID: 317244699
+    locked: 0
+  - name: LaFarmaObjects
+    uniqueID: 2405340535
+    locked: 0
+  - name: BackeryBackGround
+    uniqueID: 3874685051
+    locked: 0
+  - name: BackeryGround
+    uniqueID: 2661692429
+    locked: 0
+  - name: BackeryObjects
+    uniqueID: 838737265
+    locked: 0
+  - name: BackeryObjectsFront
+    uniqueID: 1542551703
+    locked: 0
+  - name: TabonLevelBackground
+    uniqueID: 3195175567
+    locked: 0
+  - name: TabonLevelGround
+    uniqueID: 1139795783
+    locked: 0
+  - name: TabonLevelArc
+    uniqueID: 3381597199
+    locked: 0
+  - name: TabonLevelObjects
+    uniqueID: 2813524985
+    locked: 0
+  - name: Character
+    uniqueID: 3408344867
+    locked: 0
+  - name: TreesFront
+    uniqueID: 2293620751
+    locked: 0
+  - name: TreeAtFront
+    uniqueID: 1860506609
+    locked: 0
+  - name: Palms
+    uniqueID: 752583999
+    locked: 0
+  - name: Zombies
+    uniqueID: 1422360329
+    locked: 0
+  - name: MommyQuest
+    uniqueID: 1064484201
+    locked: 0
+  - name: InvitoryPad
+    uniqueID: 1950188141
+    locked: 0
+  - name: InvatoryTools_Arrow_items_pads
+    uniqueID: 3638611195
+    locked: 0
+  - name: Gui
+    uniqueID: 1317954321
+    locked: 0
+  - name: star
+    uniqueID: 1357110217
+    locked: 0
+  - name: sign
+    uniqueID: 4093337421
+    locked: 0
+  - name: key
+    uniqueID: 1404266033
+    locked: 0
