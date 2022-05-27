@@ -80,6 +80,8 @@ public class Movment : MonoBehaviour
     public GameObject stand6;
     public GameObject KingHead8;
     public GameObject KingHead9;
+    public string blocks;
+    public GameObject welldone;
 
     // The initial position of the GameObject
     Vector3 initialPosition;

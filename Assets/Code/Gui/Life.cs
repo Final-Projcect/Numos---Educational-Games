@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Life : IObservable<int>
 {
-    int currentlife = 100;
+    public int currentlife = 100;
     private List<IObserver<int>> observers = new List<IObserver<int>>();
 
     private void notify()

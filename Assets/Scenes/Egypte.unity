@@ -19347,7 +19347,12 @@ MonoBehaviour:
   StuffParent: {fileID: 0}
   StuffParent2: {fileID: 0}
   ocean: 0
+  inisidted: 0
   onland: key
+  returnland: key
+  rightland: {fileID: 1901846772}
+  onit: 0
+  leftlamnd: {fileID: 5759761137006495533, guid: 262b770c4eaca034b96e117571fc1504, type: 3}
 --- !u!95 &1280323500
 Animator:
   serializedVersion: 3
@@ -24609,7 +24614,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 334.59998, y: -191.38}
+  m_AnchoredPosition: {x: 334.5996, y: -191.37988}
   m_SizeDelta: {x: 669.135, y: 350.78687}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1764576260
@@ -26598,7 +26603,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 15.116219, y: 4.816046}
@@ -27260,8 +27265,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1590718939
-  m_SortingLayer: 12
+  m_SortingLayerID: -270194965
+  m_SortingLayer: 15
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 64f55ed5c1c5e1842bece2b609bed5f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -95,4 +95,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/KingPotionNew.unity
     guid: f2ea72412b4c93243a01ebb7a3306a85
+  - enabled: 1
+    path: Assets/Scenes/GoodWork.unity
+    guid: 4d50634857bd74842847b97faba3d0bf
+  - enabled: 1
+    path: Assets/Scenes/FinalBossPrinceOne.unity
+    guid: b20b42a6c1d89d747b84b48a1f24b50e
   m_configObjects: {}

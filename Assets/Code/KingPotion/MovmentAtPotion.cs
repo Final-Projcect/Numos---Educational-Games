@@ -170,11 +170,11 @@ public class MovmentAtPotion : MonoBehaviour
 
         if (collision.gameObject.tag == king)
         {
-            textdisplay.text = "<u> אפס:  </u> אחי! מצאתי אותך! מה עשית עד עכשיו?" + "\n" + "על מנת לשמוע את מה שיש לאחי להגיד הקישו על V";
+            textdisplay.text = "<u> אפס:</u> אחי! מצאתי אותך! מה עשית עד עכשיו?" + "\n" + "על מנת לשמוע את מה שיש לאחי להגיד הקישו על V";
             if (Input.GetKeyDown(KeyCode.V))
             {
                 Instantiate(say1);
-                textdisplay.text = "<u> אפס:  </u> בוא נברח מכאן! תגיד לי איך לשחרר אותך ונחזור חזרה לארץ שלנו" + "\n" + "על מנת לשמוע את מה שיש לאחי להגיד הקישו על K";
+                textdisplay.text = "<u> אפס:</u> בוא נברח מכאן! תגיד לי איך לשחרר אותך ונחזור חזרה לארץ שלנו" + "\n" + "על מנת לשמוע את מה שיש לאחי להגיד הקישו על K";
                 alradyin = true;
                 ///////////////
                 if (Input.GetKeyDown(KeyCode.K))
@@ -183,7 +183,7 @@ public class MovmentAtPotion : MonoBehaviour
                     Destroy(say1);
                     Instantiate(say2);
                     alradyin = true;
-                    textdisplay.text = "<u> אפס:  </u> על מנת לשאול את האח שאלות בחרו באחת האפשרויות הבאות:" + "\n" + "א. איך אני עושה את זה? - לחצו על V" + "\n" + "ב. אולי נוותר על זה, אשחרר אותך ואלך - לחצו על B." + "\n" + "ג. תן לי הנחיות איך לשחרר אותך ותכין את השיקוי אתה - לחצו על C";
+                    textdisplay.text = "<u> אפס:</u> על מנת לשאול את האח שאלות בחרו באחת האפשרויות הבאות:" + "\n" + "א. איך אני עושה את זה? - לחצו על V" + "\n" + "ב. אולי נוותר על זה, אשחרר אותך ואלך - לחצו על B." + "\n" + "ג. תן לי הנחיות איך לשחרר אותך ותכין את השיקוי אתה - לחצו על C";
                     /////////////////////
                     if (Input.GetKeyDown(KeyCode.F))
                     {
@@ -191,7 +191,7 @@ public class MovmentAtPotion : MonoBehaviour
                         alradyin = false;
                         Instantiate(instructions);
                         alradyin = true;
-                        textdisplay.text = "<u> אפס:  </u> על מנת לשאול את האח שאלות בחרו באחת האפשרויות הבאות:" + "\n" + "א. אולי נוותר על זה, אשחרר אותך ואלך - לחצו על A." + "\n" + "ב. תן לי הנחיות איך לשחרר אותך ותכין את השיקוי אתה - לחצו על B" + "\n" + "ג. אפשר בבקשה רמז נוסף? - לחצו על C";
+                        textdisplay.text = "<u> אפס:</u> על מנת לשאול את האח שאלות בחרו באחת האפשרויות הבאות:" + "\n" + "א. אולי נוותר על זה, אשחרר אותך ואלך - לחצו על A." + "\n" + "ב. תן לי הנחיות איך לשחרר אותך ותכין את השיקוי אתה - לחצו על B" + "\n" + "ג. אפשר בבקשה רמז נוסף? - לחצו על C";
                         /////////////////////////////
                         if (Input.GetKeyDown(KeyCode.A))
                         {
@@ -199,7 +199,7 @@ public class MovmentAtPotion : MonoBehaviour
                             alradyin = false;
                             Instantiate(youonyouron);
                             alradyin = true;
-                            textdisplay.text = "<u> אפס:  </u> על מנת לשאול את האח שאלות בחרו באחת האפשרויות הבאות:" + "\n" + "א. במידה ואני טועה איך אני יכול לאפס את המכונה? - לחצו על B" + "\n" + "ב. אפשר בבקשה רמז נוסף? - לחצו על C";
+                            textdisplay.text = "<u> אפס:</u> על מנת לשאול את האח שאלות בחרו באחת האפשרויות הבאות:" + "\n" + "א. במידה ואני טועה איך אני יכול לאפס את המכונה? - לחצו על B" + "\n" + "ב. אפשר בבקשה רמז נוסף? - לחצו על C";
 
                             ///////////////////////////////////
                              if (Input.GetKeyDown(KeyCode.B))
@@ -208,7 +208,7 @@ public class MovmentAtPotion : MonoBehaviour
                                 alradyin = false;
                                 Instantiate(cleanthemachine);
                                 alradyin = true;
-                                textdisplay.text = "<u> אפס:  </u> על מנת לשאול את האח שאלות בחרו באחת האפשרויות הבאות:" + "\n" + "א. אפשר רמז נוסף? - לחצו על A";
+                                textdisplay.text = "<u> אפס:</u> על מנת לשאול את האח שאלות בחרו באחת האפשרויות הבאות:" + "\n" + "א. אפשר רמז נוסף? - לחצו על A";
                                 //////////////////////////////////////
                                 if (Input.GetKeyDown(KeyCode.A))
                                 {
@@ -216,7 +216,7 @@ public class MovmentAtPotion : MonoBehaviour
                                     alradyin = false;
                                     Instantiate(clue1);
                                     alradyin = true;
-                                    textdisplay.text = "<u> אפס:  </u> על מנת להשיג רמז נוסף לחצו על C";
+                                    textdisplay.text = "<u> אפס:</u> על מנת להשיג רמז נוסף לחצו על C";
                                     ////////////////////////////////////////
                                     if (Input.GetKeyDown(KeyCode.C))
                                     {
@@ -224,7 +224,7 @@ public class MovmentAtPotion : MonoBehaviour
                                         alradyin = false;
                                         Instantiate(clue2);
                                         alradyin = true;
-                                        textdisplay.text = "<u> אפס:  </u> תודה אחי, אני לא אאכזב אותך";
+                                        textdisplay.text = "<u> אפס:</u> תודה אחי, אני לא אאכזב אותך";
                                     }
                                 }
                                 //////////////////////////////////////
@@ -238,7 +238,7 @@ public class MovmentAtPotion : MonoBehaviour
                                 alradyin = false;
                                 Instantiate(clue2);
                                 alradyin = true;
-                                textdisplay.text = "<u> אפס:  </u> תודה אחי, אני לא אאכזב אותך";
+                                textdisplay.text = "<u> אפס:</u> תודה אחי, אני לא אאכזב אותך";
                             }
                             ///////////////////////////////////
                         }
@@ -251,7 +251,7 @@ public class MovmentAtPotion : MonoBehaviour
                             alradyin = false;
                             Instantiate(cleanthemachine);
                             alradyin = true;
-                            textdisplay.text = "<u> אפס:  </u> על מנת לשאול את האח שאלות בחרו באחת האפשרויות הבאות:" + "\n" + "א. אפשר רמז נוסף? - לחצו על A";
+                            textdisplay.text = "<u> אפס:</u> על מנת לשאול את האח שאלות בחרו באחת האפשרויות הבאות:" + "\n" + "א. אפשר רמז נוסף? - לחצו על A";
                             ///////////////////////////////////
                             if (Input.GetKeyDown(KeyCode.A))
                             {
@@ -259,7 +259,7 @@ public class MovmentAtPotion : MonoBehaviour
                                 alradyin = false;
                                 Instantiate(clue1);
                                 alradyin = true;
-                                textdisplay.text = "<u> אפס:  </u> על מנת להשיג רמז נוסף לחצו על C";
+                                textdisplay.text = "<u> אפס:</u> על מנת להשיג רמז נוסף לחצו על C";
                                 ///////////////////////////////////
                                 if (Input.GetKeyDown(KeyCode.C))
                                 {
@@ -267,7 +267,7 @@ public class MovmentAtPotion : MonoBehaviour
                                     alradyin = false;
                                     Instantiate(clue2);
                                     alradyin = true;
-                                    textdisplay.text = "<u> אפס:  </u> תודה אחי, אני לא אאכזב אותך";
+                                    textdisplay.text = "<u> אפס:</u> תודה אחי, אני לא אאכזב אותך";
                                 }
                                 ///////////////////////////////////
                             }
@@ -280,7 +280,7 @@ public class MovmentAtPotion : MonoBehaviour
                                 alradyin = false;
                                 Instantiate(youonyouron);
                                 alradyin = true;
-                                textdisplay.text = "<u> אפס:  </u> על מנת לשאול את האח שאלות בחרו באחת האפשרויות הבאות:" + "\n" + "א. איך אני עושה את זה? - לחצו על A";
+                                textdisplay.text = "<u> אפס:</u> על מנת לשאול את האח שאלות בחרו באחת האפשרויות הבאות:" + "\n" + "א. איך אני עושה את זה? - לחצו על A";
                                 ///////////////////////////////////
                                 if (Input.GetKeyDown(KeyCode.A))
                                 {
@@ -288,7 +288,7 @@ public class MovmentAtPotion : MonoBehaviour
                                     alradyin = false;
                                     Instantiate(instructions);
                                     alradyin = true;
-                                    textdisplay.text = "<u> אפס:  </u> תוכלו לשאול את האח את השאלות הבאות:" + "\n" + "א. אפשר בבקשה רמז נוסף? - לחצו על B" + "\n" + "ב. איך אני מאפס את המכונה במידה והתבלבלתי? - לחצו על C. ";
+                                    textdisplay.text = "<u> אפס:</u> תוכלו לשאול את האח את השאלות הבאות:" + "\n" + "א. אפשר בבקשה רמז נוסף? - לחצו על B" + "\n" + "ב. איך אני מאפס את המכונה במידה והתבלבלתי? - לחצו על C. ";
 
                                     ///////////////////////////////////
                                     if (Input.GetKeyDown(KeyCode.B))
@@ -298,7 +298,7 @@ public class MovmentAtPotion : MonoBehaviour
                                         alradyin = false;
                                         Instantiate(cleanthemachine);
                                         alradyin = true;
-                                        textdisplay.text = "<u> אפס:  </u> תודה אחי, אני לא אאכזב אותך";
+                                        textdisplay.text = "<u> אפס:</u> תודה אחי, אני לא אאכזב אותך";
                                         //////////////////////////////////
                                     }
                                     /////////////////////////////////
@@ -308,7 +308,7 @@ public class MovmentAtPotion : MonoBehaviour
                                         alradyin = false;
                                         Instantiate(clue1);
                                         alradyin = true;
-                                        textdisplay.text = "<u> אפס:  </u> על מנת להשיג רמז נוסף לחצו על A";
+                                        textdisplay.text = "<u> אפס:</u> על מנת להשיג רמז נוסף לחצו על A";
                                         ///////////////////////////////////
                                         if (Input.GetKeyDown(KeyCode.A))
                                         {
@@ -316,7 +316,7 @@ public class MovmentAtPotion : MonoBehaviour
                                             alradyin = false;
                                             Instantiate(clue2);
                                             alradyin = true;
-                                            textdisplay.text = "<u> אפס:  </u> תודה אחי, אני לא אאכזב אותך";
+                                            textdisplay.text = "<u> אפס:</u> תודה אחי, אני לא אאכזב אותך";
                                         }
                                         /////////////////////////////////
                                     }
@@ -333,7 +333,7 @@ public class MovmentAtPotion : MonoBehaviour
                             alradyin = false;
                             Instantiate(clue1);
                             alradyin = true;
-                            textdisplay.text = "<u> אפס:  </u> על מנת להשיג רמז נוסף לחצו על A";
+                            textdisplay.text = "<u> אפס:</u> על מנת להשיג רמז נוסף לחצו על A";
                             ///////////////////////////////////
                             if (Input.GetKeyDown(KeyCode.A))
                             {
@@ -341,7 +341,7 @@ public class MovmentAtPotion : MonoBehaviour
                                 alradyin = false;
                                 Instantiate(clue2);
                                 alradyin = true;
-                                textdisplay.text = "<u> אפס:  </u> תודה אחי, אני לא אאכזב אותך";
+                                textdisplay.text = "<u> אפס:</u> תודה אחי, אני לא אאכזב אותך";
                             }
                         }
                         ///////////////////////////////////
@@ -475,6 +475,6 @@ public class MovmentAtPotion : MonoBehaviour
     public void Start()
     {
         //text desplay
-        textdisplay.text = "מעניין האם אחי נמצא כאן, אם כן אשמח לתקשר איתו באמצעות לחיצה על המקש - L";
+        textdisplay.text = "<u>אפס:</u> מעניין האם אחי נמצא כאן, אם כן אשמח לתקשר איתו באמצעות לחיצה על המקש - L";
     }
 }

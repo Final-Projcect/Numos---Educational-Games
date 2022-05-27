@@ -30,7 +30,7 @@ public class Rand : MonoBehaviour
     {
         happy = GetComponent<AudioSource>();
 
-        textdisplayshow.text = "אוי לא, נראה שנתקענו במערה!!" + "\n" + " אך אל חשש ואל דאגה, כל שעליך לעשות זה פשוט לגרור את האבנים החוסמות למיקום המתאים על פי הסימן שלהם";
+       // textdisplayshow.text = "אוי לא, נראה שנתקענו במערה!!" + "\n" + " אך אל חשש ואל דאגה, כל שעליך לעשות זה פשוט לגרור את האבנים החוסמות למיקום המתאים על פי הסימן שלהם";
         //Vector3 smallpos;
         if (availableNumbers.Count == 0)
         {

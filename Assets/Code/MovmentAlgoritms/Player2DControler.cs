@@ -36,7 +36,12 @@ public class Player2DControler : MonoBehaviour
     public Transform StuffParent;
     public Transform StuffParent2;
     public bool ocean = true;
+    public bool inisidted = false;
     public string onland;
+    public string returnland;
+    public GameObject rightland;
+    public bool onit = false;
+    public GameObject leftlamnd;
 
 
     public Vector3 OnTriggerEnter2D(Collider2D col)
@@ -75,14 +80,30 @@ public class Player2DControler : MonoBehaviour
             height = this.GetComponent<SpriteRenderer>().bounds.size.y;
             ships.transform.position = new Vector3(transform.position.x, transform.position.y - (height / 4), transform.position.z);
             Debug.Log("i got a ship");
+            inisidted = true;
+            
 
         }
 
-        if (collision.gameObject.tag == onland)
+        if (collision.gameObject.tag == onland && inisidted == true && onit == false )
         {
             Destroy(ships);
-            //Instantiate(returnship);
+            //Destroy(rightland);
+            //Instantiate(leftlamnd);
+            onit = true;
+            Instantiate(returnship);
+            inisidted = false;
         }
+
+       /* if (collision.gameObject.tag == returnland && inisidted == false && onit ==true)
+        {
+            Destroy(returnship);
+            Destroy(rightland);
+            Instantiate(leftlamnd);
+            onit = true;
+            Instantiate(ships);
+            inisidted = true;
+        }*/
 
 
 

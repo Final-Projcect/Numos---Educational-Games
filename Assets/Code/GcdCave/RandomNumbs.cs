@@ -61,7 +61,7 @@ public class RandomNumbs : MonoBehaviour
     {
         happy = GetComponent<AudioSource>();
 
-        textdisplayshow.text = "אוי לא, נראה שנתקענו במערה!!" + "\n" + " אך אל חשש ואל דאגה, כל שעליך לעשות זה פשוט לגרור את האבנים החוסמות למיקום המתאים על פי הסימן שלהם";
+        //textdisplayshow.text = "<u> אפס:</u> אוי לא, נראה שנתקענו במערה!!" + "\n" + "מעניין האם מישהו יוכל לעזור לי לצאת מכאן, כנראה כדאי שבנתיים המשיך ללכת";
         //Vector3 smallpos;
 
         //level 1 - prime numbers so the biggest divisior is 1
@@ -115,10 +115,21 @@ public class RandomNumbs : MonoBehaviour
             numbers = availableNumbersLev2.IndexOf(basics[secondnum]);
             Stand1Package[1].text = availableNumbersLev2[numbers].ToString();
 
-
-            int thirdnum = UnityEngine.Random.Range(0, basicsdiv.Length);
-            availableNumbersLev2.Add(basicsdiv[thirdnum]);
-            numbers = availableNumbersLev2.IndexOf(basicsdiv[thirdnum]);
+            int thirdnum = 0;
+            /* int thirdnum = UnityEngine.Random.Range(0, basicsdiv.Length);*/
+            if (basics[secondnum] < basics[firstnum])
+            {
+                thirdnum = secondnum;
+            }
+            else
+                 thirdnum = firstnum;
+            //availableNumbersLev2.Add(basicsdiv[thirdnum]);
+            availableNumbersLev2.Add(basics[thirdnum]);
+            Debug.Log("third num is:" + basics[thirdnum]);
+            Debug.Log("firstnum is: " + basics[firstnum]);
+            Debug.Log("second num is:" + basics[secondnum]); 
+            //numbers = availableNumbersLev2.IndexOf(basicsdiv[thirdnum]);
+            numbers = availableNumbersLev2.IndexOf(basics[thirdnum]);
             Stand1Package[2].text = availableNumbersLev2[numbers].ToString();
 
             for (int i = 3; i < Numsize-1; i++)
