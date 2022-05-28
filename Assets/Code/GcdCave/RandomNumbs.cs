@@ -255,16 +255,7 @@ public class RandomNumbs : MonoBehaviour
         return b == 0 ? a : GCD(b, a % b);
     }
 
-    public int NumAtSign(GameObject head)
-    {
-        int NumberOfSign;
-        textfind = this.GetComponentInChildren<TextMeshProUGUI>();
-        NumberOfSign = Convert.ToInt32(textfind.text);
-        Debug.Log("i am a: " + NumberOfSign);
-        return NumberOfSign;
-
-
-    }
+    
 
 
 

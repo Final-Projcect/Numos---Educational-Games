@@ -88,6 +88,8 @@ public class Movment : MonoBehaviour
 
     //block the next place
     public GameObject block;
+    public RandomNumbs ranums;
+    bool donald = false;
 
     private void Awake()
     {
@@ -218,13 +220,23 @@ public class Movment : MonoBehaviour
                 {
                     Debug.Log("yo 204");
                     onplace = true;
-                    int num = collision.gameObject.GetComponent<RandomNumbs>().NumAtSign(takenkinghead);
+                    //int num = collision.gameObject.GetComponent<RandomNumbs>().NumAtSign(takenkinghead);
+                    int num = 0;
+                    
+                    num = takenkinghead.gameObject.GetComponent<NumOnking>().NumAtking();
+
                     Debug.Log("pi 207 " + num);
                     if (num == 1)
                     {
                         Debug.Log("do 210");
-                        collision.gameObject.GetComponent<RandomNumbs>().getit = true;
+                        //donald = true;
+                        ranums.getit = true;////fix with ofek
+                        Debug.Log("do 234");
+                        Instantiate(Goldwin1);
+                        textdisplay.text = "כל הכבוד, כעת עליך לעבור את חידת המחלק המשותף של המספרים הבאים, במידה ותעמוד על האבן הנכונה אז אולי תוכל להשיג יבשה";
+
                     }
+                    
                 }
             }
         }

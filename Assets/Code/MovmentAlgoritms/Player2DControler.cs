@@ -89,13 +89,15 @@ public class Player2DControler : MonoBehaviour
         {
             Destroy(ships);
             //Destroy(rightland);
-            //Instantiate(leftlamnd);
+            ///
+           // Instantiate(leftlamnd);
             onit = true;
             Instantiate(returnship);
             inisidted = false;
-        }
+            }
 
-       /* if (collision.gameObject.tag == returnland && inisidted == false && onit ==true)
+        //
+        if (collision.gameObject.tag == returnland && inisidted == false && onit ==true)
         {
             Destroy(returnship);
             Destroy(rightland);
@@ -103,8 +105,8 @@ public class Player2DControler : MonoBehaviour
             onit = true;
             Instantiate(ships);
             inisidted = true;
-        }*/
-
+        }
+        ////
 
 
     }

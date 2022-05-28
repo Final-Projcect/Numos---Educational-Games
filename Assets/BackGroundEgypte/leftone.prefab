@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5235807034450313942}
   m_Layer: 0
   m_Name: leftone
-  m_TagString: 110
+  m_TagString: Ins
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

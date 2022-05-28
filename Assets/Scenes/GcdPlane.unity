@@ -2486,6 +2486,7 @@ GameObject:
   - component: {fileID: 310858979}
   - component: {fileID: 310858978}
   - component: {fileID: 310858980}
+  - component: {fileID: 310858981}
   m_Layer: 0
   m_Name: 4
   m_TagString: king
@@ -2585,6 +2586,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.2, y: 3.87}
   m_EdgeRadius: 0
+--- !u!114 &310858981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310858977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aaeaf9f287a42349a4af2cb33a3fa94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &328711946
 GameObject:
   m_ObjectHideFlags: 0
@@ -5443,6 +5456,7 @@ GameObject:
   - component: {fileID: 691635254}
   - component: {fileID: 691635253}
   - component: {fileID: 691635255}
+  - component: {fileID: 691635256}
   m_Layer: 0
   m_Name: 3
   m_TagString: king
@@ -5542,6 +5556,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.2, y: 3.87}
   m_EdgeRadius: 0
+--- !u!114 &691635256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691635252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aaeaf9f287a42349a4af2cb33a3fa94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &695319425
 GameObject:
   m_ObjectHideFlags: 0
@@ -6294,6 +6320,7 @@ GameObject:
   - component: {fileID: 784951583}
   - component: {fileID: 784951582}
   - component: {fileID: 784951584}
+  - component: {fileID: 784951585}
   m_Layer: 0
   m_Name: 2
   m_TagString: king
@@ -6393,6 +6420,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.2, y: 3.87}
   m_EdgeRadius: 0
+--- !u!114 &784951585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 784951581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aaeaf9f287a42349a4af2cb33a3fa94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &786486191
 GameObject:
   m_ObjectHideFlags: 0
@@ -14145,7 +14184,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918399958}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.604919, y: -9.356045, z: 348.053}
+  m_LocalPosition: {x: 21.58, y: -8.67, z: 348.053}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1486030218}
@@ -14434,7 +14473,7 @@ GameObject:
   - component: {fileID: 1940378947}
   m_Layer: 8
   m_Name: jumprockWithWater
-  m_TagString: jumpstand
+  m_TagString: star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14447,7 +14486,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940378945}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.494919, y: -8.926045, z: 348.053}
+  m_LocalPosition: {x: 13.82, y: -8.66, z: 348.053}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 386520605}
