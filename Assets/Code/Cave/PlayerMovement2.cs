@@ -97,6 +97,8 @@ public class PlayerMovement2 : MonoBehaviour
 
     //block the next place
     public GameObject block;
+    public string gold;
+    public int getgold = 0;
 
 
 
@@ -167,6 +169,14 @@ public class PlayerMovement2 : MonoBehaviour
             alredytalk = true;
 
 
+        }
+
+        if (collision.gameObject.tag == gold)
+        {
+            getgold = getgold + 1;
+            Debug.Log("you have: " + getgold);
+            SingleToon.getInstance().curmoney.gain(1200);
+            //SingleToon.getInstance().curscore.raise(50);
         }
 
         if (collision.gameObject.tag == rabbitcatch)

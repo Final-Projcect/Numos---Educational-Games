@@ -40,6 +40,10 @@ public class TakeAStone : MonoBehaviour
 
     public GameObject block;
 
+    public int count = 0;
+    public GameObject gold;
+    bool inisited = false;
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == stone)
@@ -77,57 +81,79 @@ public class TakeAStone : MonoBehaviour
                 Debug.Log("mon bian 89: " + AStone.transform.position);
                 thestonenum = AStone.GetComponent<NumOnStone>().NumAtSign();
 
-                if (collision.gameObject.tag == oneonezero)
+               if (collision.gameObject.tag == oneonezero)
                 {
-                    if (thestonenum>=1 || thestonenum<=10)
+                    if (thestonenum>=1 && thestonenum<=10)
                     {
                         Debug.Log("good job its wonderfull");
-                        textdisplay.text = "<u> המשרת האוויל:</u> כל הכבוד!";
+                        textdisplay.text = "<u> המשרת האוויל:</u> כל הכבוד! הצלחתם לשים כבר " + (count + 1) + " במקום ";
                         if (firstdestroy == false)
                         {
                             Destroy(firstblock);
                             firstdestroy = true;
-                            
+                            count++;
+
+
                         }
 
                         else if (firstdestroy == true && seconddestroy == false)
                         {
                             Destroy(secondblock);
                             seconddestroy = true;
+                            count++;
                         }
 
                         else if (firstdestroy == true && seconddestroy == true && thirddestroy == false)
                         {
                             Destroy(thirdblock);
                             thirddestroy = true;
+                            count++;
                         }
 
                         else if (firstdestroy == true && seconddestroy == true && thirddestroy == true && fourthdestroy == false)
                         {
                             Destroy(fourthblock);
                             fourthdestroy = true;
-                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!";
+                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!" + "\n" + "כמו שאפשר לראות המספרים החיוביים נמצאים מימין לציר האיקס ואילו השליליים נמצאים משמאל, מספרים שהם חיוביים גדולים מהמספרים השליליים" + "\n" + "  זכית ב-1500 נקודות ואוצר מטבעות זהב" + "\n" + "כמו כן התווסף לתרמיל האישי שלך חפץ שיעזור לך להכין את השיקוי להצלת המלך";
+                            SingleToon.getInstance().curscore.raise(1500);
+                            if (inisited == false)
+                            {
+                                Instantiate(gold);
+                                inisited = true;
+                            }
                         }
 
                         else
                         {
-                            textdisplay.text = "<u> המשרת האוויל:</u>מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה !!";
+                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!" + "\n" + "כמו שאפשר לראות המספרים החיוביים נמצאים מימין לציר האיקס ואילו השליליים נמצאים משמאל, מספרים שהם חיוביים גדולים מהמספרים השליליים";
                             Destroy(block);
                         }
                             
 
 
                     }
-                    else
+                    else {
+                        if (thestonenum < 0)
+                        {
+                            textdisplay.text = "<u> המשרת האוויל:</u> אולי כדי שתנסה באזור היותר קריר של המערה";
+                        }
+
+                        else if (thestonenum-10>0)
+                        {
+                            textdisplay.text = "<u> המשרת האוויל:</u> מתחמם, אתה קרוב לאזור הנכון להנחת האבן";
+                        }
+                        else
                         textdisplay.text = "<u> המשרת האוויל:</u> אולי כדאי שתנסה פעם נוספת...";
+                    }
+                        
                 }
                 ///
                 else if (collision.gameObject.tag == onezerotwozero)
                 {
-                    if (thestonenum > 10 || thestonenum <= 20)
+                    if (thestonenum > 10 && thestonenum <= 20)
                     {
                         Debug.Log("good job its wonderfull");
-                        textdisplay.text = "<u> המשרת האוויל:</u> כל הכבוד!";
+                        textdisplay.text = "<u> המשרת האוויל:</u> כל הכבוד! הצלחתם לשים כבר " + (count + 1) + " במקום ";
                         if (firstdestroy == false)
                         {
                             Destroy(firstblock);
@@ -137,7 +163,8 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
-                            
+                            count++;
+
                         }
 
                         else if (firstdestroy == true && seconddestroy == false)
@@ -149,6 +176,7 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
+                            count++;
                         }
 
                         else if (firstdestroy == true && seconddestroy == true && thirddestroy == false)
@@ -160,6 +188,7 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
+                            count++;
                         }
 
                         else if (firstdestroy == true && seconddestroy == true && thirddestroy == true && fourthdestroy == false)
@@ -171,12 +200,18 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
-                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!";
+                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!" + "\n" + "כמו שאפשר לראות המספרים החיוביים נמצאים מימין לציר האיקס ואילו השליליים נמצאים משמאל, מספרים שהם חיוביים גדולים מהמספרים השליליים" + "\n" + "  זכית ב-1500 נקודות ואוצר מטבעות זהב" + "\n" + "כמו כן התווסף לתרמיל האישי שלך חפץ שיעזור לך להכין את השיקוי להצלת המלך";
+                            SingleToon.getInstance().curscore.raise(1500);
+                            if (inisited == false)
+                            {
+                                Instantiate(gold);
+                                inisited = true;
+                            }
                         }
 
                         else
                         {
-                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!";
+                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!" + "\n" + "כמו שאפשר לראות המספרים החיוביים נמצאים מימין לציר האיקס ואילו השליליים נמצאים משמאל, מספרים שהם חיוביים גדולים מהמספרים השליליים";
                             Destroy(block);
                         }
                             
@@ -185,16 +220,28 @@ public class TakeAStone : MonoBehaviour
 
                     }
                     else
+                    {
+                        if (thestonenum < 0)
+                        {
+                            textdisplay.text = "<u> המשרת האוויל:</u> אולי כדי שתנסה באזור היותר קריר של המערה";
+                        }
+
+                        else if (thestonenum - 10 > 0)
+                        {
+                            textdisplay.text = "<u> המשרת האוויל:</u> מתחמם, אתה קרוב לאזור הנכון להנחת האבן";
+                        }
+                        else
                         textdisplay.text = "<u> המשרת האוויל:</u> אולי כדאי שתנסה פעם נוספת...";
+                    }
                 }
 
                 ///
                 else if (collision.gameObject.tag == twozerothtreezero)
                 {
-                    if (thestonenum > 20 || thestonenum <= 30)
+                    if (thestonenum > 20 && thestonenum <= 30)
                     {
                         Debug.Log("good job its wonderfull");
-                        textdisplay.text = "<u> המשרת האוויל:</u> כל הכבוד!";
+                        textdisplay.text = "<u> המשרת האוויל:</u> כל הכבוד! הצלחתם לשים כבר " + (count + 1) + " במקום ";
                         if (firstdestroy == false)
                         {
                             Destroy(firstblock);
@@ -204,6 +251,7 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
+                            count++;
                         }
 
                         else if (firstdestroy == true && seconddestroy == false)
@@ -215,6 +263,7 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
+                            count++;
                         }
 
                         else if (firstdestroy == true && seconddestroy == true && thirddestroy == false)
@@ -226,6 +275,7 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
+                            count++;
                         }
 
                         else if (firstdestroy == true && seconddestroy == true && thirddestroy == true && fourthdestroy == false)
@@ -237,27 +287,46 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
-                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!";
+                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!" + "\n" + "כמו שאפשר לראות המספרים החיוביים נמצאים מימין לציר האיקס ואילו השליליים נמצאים משמאל, מספרים שהם חיוביים גדולים מהמספרים השליליים" + "\n" + "  זכית ב-1500 נקודות ואוצר מטבעות זהב" + "\n" + "כמו כן התווסף לתרמיל האישי שלך חפץ שיעזור לך להכין את השיקוי להצלת המלך";
+                            SingleToon.getInstance().curscore.raise(1500);
+                            if (inisited == false)
+                            {
+                                Instantiate(gold);
+                                inisited = true;
+                            }
                         }
 
 
                         else
-                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!";
+                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!" + "\n" + "כמו שאפשר לראות המספרים החיוביים נמצאים מימין לציר האיקס ואילו השליליים נמצאים משמאל, מספרים שהם חיוביים גדולים מהמספרים השליליים";
 
 
 
                     }
+
                     else
+                    {
+                        if (thestonenum < 0)
+                        {
+                            textdisplay.text = "<u> המשרת האוויל:</u> אולי כדי שתנסה באזור היותר קריר של המערה";
+                        }
+
+                        else if (thestonenum - 10 > 0)
+                        {
+                            textdisplay.text = "<u> המשרת האוויל:</u> מתחמם, אתה קרוב לאזור הנכון להנחת האבן";
+                        }
+                        else
                         textdisplay.text = "<u> המשרת האוויל:</u> אולי כדאי שתנסה פעם נוספת...";
+                    }
                 }
 
                 ///
                 else if (collision.gameObject.tag == zerooneone)
                 {
-                    if (thestonenum >= -1 || thestonenum <= -10)
+                    if (thestonenum <= -1 && thestonenum >= -10)
                     {
                         Debug.Log("good job its wonderfull");
-                        textdisplay.text = "<u> המשרת האוויל:</u> כל הכבוד!";
+                        textdisplay.text = "<u> המשרת האוויל:</u> כל הכבוד! הצלחתם לשים כבר " + (count + 1) + " במקום ";
                         if (firstdestroy == false)
                         {
                             Destroy(firstblock);
@@ -267,6 +336,7 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
+                            count++;
                         }
 
                         else if (firstdestroy == true && seconddestroy == false)
@@ -278,6 +348,7 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
+                            count++;
                         }
 
                         else if (firstdestroy == true && seconddestroy == true && thirddestroy == false)
@@ -289,6 +360,7 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
+                            count++;
                         }
 
                         else if (firstdestroy == true && seconddestroy == true && thirddestroy == true && fourthdestroy == false)
@@ -300,25 +372,45 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
-                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!";
+                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!" + "\n" + "כמו שאפשר לראות המספרים החיוביים נמצאים מימין לציר האיקס ואילו השליליים נמצאים משמאל, מספרים שהם חיוביים גדולים מהמספרים השליליים"  + "\n" + "  זכית ב-1500 נקודות ואוצר מטבעות זהב" + "\n" + "כמו כן התווסף לתרמיל האישי שלך חפץ שיעזור לך להכין את השיקוי להצלת המלך";
+                            SingleToon.getInstance().curscore.raise(1500);
+                            if (inisited == false)
+                            {
+                                Instantiate(gold);
+                                inisited = true;
+                            }
+
                         }
 
                         else
-                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!";
+                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!" + "\n" + "כמו שאפשר לראות המספרים החיוביים נמצאים מימין לציר האיקס ואילו השליליים נמצאים משמאל, מספרים שהם חיוביים גדולים מהמספרים השליליים";
 
 
 
                     }
                     else
+                    {
+                        if (thestonenum > 0)
+                        {
+                            textdisplay.text = "<u> המשרת האוויל:</u> אולי כדי שתנסה באזור היותר חמים של המערה";
+                        }
+
+                        else if (thestonenum + 10 > 0)
+                        {
+                            textdisplay.text = "<u> המשרת האוויל:</u> מתחמם, אתה קרוב לאזור הנכון להנחת האבן";
+                        }
+
+                        else
                         textdisplay.text = "<u> המשרת האוויל:</u> אולי כדאי שתנסה פעם נוספת...";
+                    }
                 }
 
                 else if (collision.gameObject.tag == twozeroonezero)
                 {
-                    if (thestonenum < -10 || thestonenum >= -20)
+                    if (thestonenum < -10 && thestonenum >= -20)
                     {
                         Debug.Log("good job its wonderfull");
-                        textdisplay.text = "<u> המשרת האוויל:</u> כל הכבוד!";
+                        textdisplay.text = "<u> המשרת האוויל:</u> כל הכבוד! הצלחתם לשים כבר " + (count + 1) + " במקום ";
                         if (firstdestroy == false)
                         {
                             Destroy(firstblock);
@@ -328,6 +420,7 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
+                            count++;
                         }
 
                         else if (firstdestroy == true && seconddestroy == false)
@@ -339,6 +432,7 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
+                            count++;
                         }
 
                         else if (firstdestroy == true && seconddestroy == true && thirddestroy == false)
@@ -350,6 +444,7 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
+                            count++;
                         }
 
                         else if (firstdestroy == true && seconddestroy == true && thirddestroy == true && fourthdestroy == false)
@@ -361,25 +456,43 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
-                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!";
+                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!" + "\n" + "כמו שאפשר לראות המספרים החיוביים נמצאים מימין לציר האיקס ואילו השליליים נמצאים משמאל, מספרים שהם חיוביים גדולים מהמספרים השליליים" + "\n" + "  זכית ב-1500 נקודות ואוצר מטבעות זהב" + "\n" + "כמו כן התווסף לתרמיל האישי שלך חפץ שיעזור לך להכין את השיקוי להצלת המלך";
+                            SingleToon.getInstance().curscore.raise(1500);
+                            if (inisited == false)
+                            {
+                                Instantiate(gold);
+                                inisited = true;
+                            }
                         }
 
                         else
-                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!";
+                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!" + "\n" + "כמו שאפשר לראות המספרים החיוביים נמצאים מימין לציר האיקס ואילו השליליים נמצאים משמאל, מספרים שהם חיוביים גדולים מהמספרים השליליים";
 
 
 
                     }
                     else
+                    {
+                        if (thestonenum > 0)
+                        {
+                            textdisplay.text = "<u> המשרת האוויל:</u> אולי כדי שתנסה באזור היותר חמים של המערה";
+                        }
+
+                        else if (thestonenum + 10 > 0)
+                        {
+                            textdisplay.text = "<u> המשרת האוויל:</u> מתחמם, אתה קרוב לאזור הנכון להנחת האבן";
+                        }
+                        else
                         textdisplay.text = "<u> המשרת האוויל:</u> אולי כדאי שתנסה פעם נוספת...";
+                    }
                 }
 
                 else if (collision.gameObject.tag == threezerotwozero)
                 {
-                    if (thestonenum > 20 || thestonenum <= 30)
+                    if (thestonenum < 20 && thestonenum >= 30)
                     {
                         Debug.Log("good job its wonderfull");
-                        textdisplay.text = "<u> המשרת האוויל:</u> כל הכבוד!";
+                        textdisplay.text = "<u> המשרת האוויל:</u> כל הכבוד! הצלחתם לשים כבר " + (count + 1) + " במקום ";
                         if (firstdestroy == false)
                         {
                             Destroy(firstblock);
@@ -389,6 +502,7 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
+                            count++;
                         }
 
                         else if (firstdestroy == true && seconddestroy == false)
@@ -400,6 +514,7 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
+                            count++;
                         }
 
                         else if (firstdestroy == true && seconddestroy == true && thirddestroy == false)
@@ -411,6 +526,8 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
+                            count++;
+
                         }
 
                         else if (firstdestroy == true && seconddestroy == true && thirddestroy == true && fourthdestroy == false)
@@ -422,18 +539,35 @@ public class TakeAStone : MonoBehaviour
                                 int needed = 100 - SingleToon.getInstance().curlife.currentlife;
                                 SingleToon.getInstance().curlife.heal(needed);
                             }
-                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!";
-
+                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!" + "\n" + "כמו שאפשר לראות המספרים החיוביים נמצאים מימין לציר האיקס ואילו השליליים נמצאים משמאל, מספרים שהם חיוביים גדולים מהמספרים השליליים" + "\n" + "  זכית ב-1500 נקודות ואוצר מטבעות זהב" + "\n" + "כמו כן התווסף לתרמיל האישי שלך חפץ שיעזור לך להכין את השיקוי להצלת המלך";
+                            SingleToon.getInstance().curscore.raise(1500);
+                            if (inisited == false)
+                            {
+                                Instantiate(gold);
+                                inisited = true;
+                            }
                         }
 
                         else
-                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!";
+                            textdisplay.text = "<u> המשרת האוויל:</u> מעולה הצלחת לפתור את המעבר יציאה מהמערה, תודה רבה!!" + "\n" + "כמו שאפשר לראות המספרים החיוביים נמצאים מימין לציר האיקס ואילו השליליים נמצאים משמאל, מספרים שהם חיוביים גדולים מהמספרים השליליים";
 
 
 
                     }
                     else
+                    {
+                        if (thestonenum > 0)
+                        {
+                            textdisplay.text = "<u> המשרת האוויל:</u> אולי כדי שתנסה באזור היותר חמים של המערה";
+                        }
+
+                        else if (thestonenum + 10 > 0)
+                        {
+                            textdisplay.text = "<u> המשרת האוויל:</u> מתחמם, אתה קרוב לאזור הנכון להנחת האבן";
+                        }
+                        else
                         textdisplay.text = "<u> המשרת האוויל:</u> אולי כדאי שתנסה פעם נוספת...";
+                    }
                 }
 
 

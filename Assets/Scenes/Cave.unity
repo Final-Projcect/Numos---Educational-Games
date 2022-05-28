@@ -899,7 +899,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 1422360329
+  m_SortingLayerID: -1481442311
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &70385719
@@ -2642,7 +2642,7 @@ GameObject:
   - component: {fileID: 210380184}
   - component: {fileID: 210380183}
   - component: {fileID: 210380182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: JumpBrickReverse (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4134,6 +4134,8 @@ MonoBehaviour:
   thirdblock: {fileID: 545541409}
   fourthblock: {fileID: 1375349741}
   block: {fileID: 996292362}
+  count: 0
+  gold: {fileID: 8515609203775929970, guid: a50f60e893301f4478cf69a0b0f270a9, type: 3}
 --- !u!61 &445449626
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4244,6 +4246,8 @@ MonoBehaviour:
   sixchar: {fileID: 5131862617849520374, guid: 7fcf233d990fe5643904a2cb75d3ac2e, type: 3}
   firstsix: {fileID: 0}
   block: {fileID: 1620588955}
+  gold: gold
+  getgold: 0
 --- !u!114 &445449630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5295,7 +5299,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 1422360329
+  m_SortingLayerID: -1481442311
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &545541409
@@ -8879,7 +8883,7 @@ GameObject:
   - component: {fileID: 768747753}
   - component: {fileID: 768747752}
   - component: {fileID: 768747751}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: JumpBrickReverse (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10599,7 +10603,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -12849,7 +12853,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 1422360329
+  m_SortingLayerID: -1481442311
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &1293190230
@@ -14441,7 +14445,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 1422360329
+  m_SortingLayerID: -1481442311
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &1414600324
@@ -15200,7 +15204,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 1422360329
+  m_SortingLayerID: -1481442311
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &1486741254
@@ -16675,8 +16679,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1620588955}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 123.59, y: -5.49, z: 0}
-  m_LocalScale: {x: 3.251351, y: 0.45828784, z: 2.493484}
+  m_LocalPosition: {x: 123.59, y: 3.139, z: 0}
+  m_LocalScale: {x: 3.251351, y: 4.4441376, z: 2.493484}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 15
@@ -17345,7 +17349,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 1422360329
+  m_SortingLayerID: -1481442311
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &1716545362
