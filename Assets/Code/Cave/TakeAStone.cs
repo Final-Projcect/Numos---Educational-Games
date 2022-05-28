@@ -323,8 +323,10 @@ public class TakeAStone : MonoBehaviour
                 ///
                 else if (collision.gameObject.tag == zerooneone)
                 {
+                    Debug.Log("326");
                     if (thestonenum <= -1 && thestonenum >= -10)
                     {
+                        Debug.Log("329");
                         Debug.Log("good job its wonderfull");
                         textdisplay.text = "<u> המשרת האוויל:</u> כל הכבוד! הצלחתם לשים כבר " + (count + 1) + " במקום ";
                         if (firstdestroy == false)
@@ -407,8 +409,10 @@ public class TakeAStone : MonoBehaviour
 
                 else if (collision.gameObject.tag == twozeroonezero)
                 {
+                    Debug.Log("412");
                     if (thestonenum < -10 && thestonenum >= -20)
                     {
+                        Debug.Log("415");
                         Debug.Log("good job its wonderfull");
                         textdisplay.text = "<u> המשרת האוויל:</u> כל הכבוד! הצלחתם לשים כבר " + (count + 1) + " במקום ";
                         if (firstdestroy == false)
@@ -489,8 +493,10 @@ public class TakeAStone : MonoBehaviour
 
                 else if (collision.gameObject.tag == threezerotwozero)
                 {
-                    if (thestonenum < 20 && thestonenum >= 30)
+                    Debug.Log("496");
+                    if (thestonenum < -20 && thestonenum >= -30)
                     {
+                        Debug.Log("499");
                         Debug.Log("good job its wonderfull");
                         textdisplay.text = "<u> המשרת האוויל:</u> כל הכבוד! הצלחתם לשים כבר " + (count + 1) + " במקום ";
                         if (firstdestroy == false)
