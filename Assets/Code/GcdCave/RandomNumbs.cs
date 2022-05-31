@@ -42,14 +42,7 @@ public class RandomNumbs : MonoBehaviour
     bool newon = false;
     //public TextMeshProUGUI newone;
 
-    //change the places after finish level2
-    public GameObject waterground1;
-    public GameObject ground1;
-
-    //change the places after finish level3
-    public GameObject waterground2;
-    public GameObject ground2;
-
+   
     private TextMeshProUGUI textfind;
 
     public bool getit = false;
@@ -103,6 +96,7 @@ public class RandomNumbs : MonoBehaviour
             int firstnum = UnityEngine.Random.Range(0, basics.Length);  
             availableNumbersLev2.Add(basics[firstnum]);
             numbers = availableNumbersLev2.IndexOf(basics[firstnum]);
+            
             Stand1Package[0].text = availableNumbersLev2[numbers].ToString();
 
 

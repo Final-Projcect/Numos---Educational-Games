@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -54,6 +55,11 @@ public class Movment : MonoBehaviour
 
     //TreeKing Lev1
     public GameObject KingHead;
+    public GameObject leaf;
+    public bool leaded = false;
+    public bool handeddd = false;
+    public bool golded = false;
+    public GameObject hanged;
     public GameObject KingHead2;
     public GameObject KingHead3;
     public GameObject KingHead4;
@@ -63,6 +69,7 @@ public class Movment : MonoBehaviour
     public string king;
     private bool haveking = false;
     private bool onplace = false;
+    public GameObject blocklevel1;
 
     //StandJump Lev2
     public GameObject stand1;
@@ -70,9 +77,21 @@ public class Movment : MonoBehaviour
     public GameObject stand3;
     public GameObject KingHead6;
     public GameObject KingHead7;
+    private GameObject standonstand;
     public string jumpstand;
     public string stand;
     public string water;
+    public bool lev2done = false;
+    public GameObject cantgoafter;
+
+    //change the places after finish level2
+    public GameObject waterground1;
+    public GameObject ground1;
+
+    //change the places after finish level3
+    public GameObject waterground2;
+    public GameObject ground2;
+
 
     //StandJump Lev3
     public GameObject stand4;
@@ -81,6 +100,8 @@ public class Movment : MonoBehaviour
     public GameObject KingHead8;
     public GameObject KingHead9;
     public string blocks;
+    public bool lev3done = false;
+    public string jumpstand2;
     public GameObject welldone;
 
     // The initial position of the GameObject
@@ -88,7 +109,8 @@ public class Movment : MonoBehaviour
 
     //block the next place
     public GameObject block;
-    public RandomNumbs ranums;
+    public RandomNumbs ranums = new RandomNumbs();
+    public WrongStand rigt = new WrongStand();
     bool donald = false;
 
     private void Awake()
@@ -175,7 +197,101 @@ public class Movment : MonoBehaviour
             SingleToon.getInstance().curscore.raise(50);
         }
 
-        if (collision.gameObject.tag == king)
+        //rigt = new WrongStand()
+        //donald = rigt.right;
+
+        else if (collision.gameObject.tag == jumpstand)
+        {
+            golded = false;
+            Debug.Log("276");
+            // int standnum = collision.gameObject.GetComponent<NumOnking>().NumAtking();
+            standonstand = collision.gameObject;
+            //int standnum = standonstand.GetComponent<NumOnking>().NumAtking();
+            bool good = standonstand.GetComponent<WrongStand>().right;
+            //collision.gameObject.GetComponent<WrongStand>().right ;
+            //ranums = new RandomNumbs();
+            //int oneside = Int32.Parse(ranums.Stand1Package[0].text);
+            //Debug.Log("the first is: " + oneside);
+            //int secondside = Int32.Parse(ranums.Stand1Package[2].text);
+            //Debug.Log("the second is: " + secondside);
+
+
+            // if (standnum == oneside || standnum == secondside)
+            if (good == true && lev2done == false)
+            {
+                textdisplay.text = "<u> קווין תשע:</u> כל הכבוד! ,כמו שאתה רואה ישנם מספרים שהם המחלקים המשותפים של עצמם ושל מספרים הגבוהים מהם" + "\n" + "כעת הגענו לרגע המכריע, האם תוכל למצוא את המחלק המשותף של המספרים הללו?";
+
+                Debug.Log("288");
+                {
+                    Destroy(cantgoafter);
+                    //Instantiate(ground1);
+                    Destroy(waterground1);
+                    lev2done = true;
+                    Destroy(stand1);
+                    Destroy(stand2);
+                    Destroy(stand3);
+                    //lev3done = true;
+                    if (golded == false)
+                    {
+                        Instantiate(Goldwin2);
+                        golded = true;
+                    }
+
+                }
+            }
+
+            else
+            {
+                Debug.Log("309");
+                if (lev2done==false)
+                {
+                    textdisplay.text = "<u> קווין תשע:</u> כדאי שתנסה פעם נוספת";
+                }
+                
+            }
+        }
+
+        else if (collision.gameObject.tag == jumpstand2)
+        {
+            golded = false;
+            Debug.Log("276");
+            // int standnum = collision.gameObject.GetComponent<NumOnking>().NumAtking();
+            standonstand = collision.gameObject;
+            //int standnum = standonstand.GetComponent<NumOnking>().NumAtking();
+            bool good = standonstand.GetComponent<WrongStand>().right;
+
+            if (good == true && lev3done == false)
+            {
+                textdisplay.text = "<u> קווין תשע:</u> כל הכבוד! הצלחת לסיים את המשימה בהצלחה" + "\n" + "כעת אתה מכיר את עיקרון ה-GCD שאומר שקיים מספר שהוא המחלק המשותף הגבוהה ביותר של שני מספרים" + "\n" + "רכיב ה-DCG נוסף לתרמילך, תמשיך עם כיוון המערה וייתכן שתגיע ליעדך";
+
+                Debug.Log("233");
+                {
+
+                    Destroy(welldone);
+                    //Instantiate(ground1);
+                    Destroy(waterground2);
+                    Destroy(stand4);
+                    Destroy(stand5);
+                    Destroy(stand6);
+                    //lev2done = true;
+                    if (golded == false)
+                    {
+                        Instantiate(Goldwin3);
+                        golded = true;
+                    }
+
+
+                }
+            }
+
+            else
+            {
+                Debug.Log("309");
+                textdisplay.text = "<u> קווין תשע:</u> כדאי שתנסה פעם נוספת, תנסה למצוא את המספר הכי גבוהה שמתחלק בין שני המספרים התלויים";
+            }
+        }
+
+        else if (collision.gameObject.tag == king)
         {
             if (haveking != true)
             {
@@ -202,9 +318,9 @@ public class Movment : MonoBehaviour
 
         }
 
-        if (haveking == true)
+        else if (haveking == true)
         {
-            
+
             if (Input.GetKeyDown(KeyPanel.Put))
             {
                 Debug.Log("yay 193");
@@ -222,24 +338,54 @@ public class Movment : MonoBehaviour
                     onplace = true;
                     //int num = collision.gameObject.GetComponent<RandomNumbs>().NumAtSign(takenkinghead);
                     int num = 0;
-                    
+
                     num = takenkinghead.gameObject.GetComponent<NumOnking>().NumAtking();
 
                     Debug.Log("pi 207 " + num);
+                    ranums = new RandomNumbs();
                     if (num == 1)
                     {
-                        Debug.Log("do 210");
+
+                        //donald = ranums.getit;
+                        Debug.Log("do 210 " + donald);
                         //donald = true;
                         ranums.getit = true;////fix with ofek
+                        //donald = rigt.right;
                         Debug.Log("do 234");
-                        Instantiate(Goldwin1);
-                        textdisplay.text = "כל הכבוד, כעת עליך לעבור את חידת המחלק המשותף של המספרים הבאים, במידה ותעמוד על האבן הנכונה אז אולי תוכל להשיג יבשה";
+                        Destroy(takenkinghead);
+                        if (leaded == false)
+                        {
+                            //Destroy(leaf);
+                            leaded = true;
+                        }
+
+                        if (handeddd == false)
+                        {
+                            Instantiate(hanged);
+                            handeddd = true;
+                        }
+
+                        if (golded == false)
+                        {
+                            Instantiate(Goldwin1);
+                            golded = true;
+                        }
+
+                        Destroy(blocklevel1);
+                        //textdisplay.text = "כל הכבוד, כעת עליך לעבור את חידת המחלק המשותף של המספרים הבאים, במידה ותעמוד על האבן הנכונה אז אולי תוכל להשיג יבשה";
+                        textdisplay.text = "<u> קווין תשע:</u> כל הכבוד לך!! הצלחת למצוא את המחלק המשותף הגבוהה בין השני הענפים " + "\n" + "  כמו שאתה רואה בגלל שהמספרים על הענפים הם זרים - כלומר אין קשר בין האחד לשני, אז המחלק המשותף בינהם הוא 1. כי שניהם בעצם מתחלקים רק ב-1" + "\n" + " כעת על מנת לעבור את המשימה הבאה, עלייך לדרוך על הסטנד עם המחלק המשותף הנכון המתאים לשני המחלקים התלויים, היזהר לא ליפול למים, הם עמוקים.";
+
 
                     }
-                    
+                    else
+                        textdisplay.text = "<u> קווין תשע:</u> חוששני שזה לא המחלק המשותף ביניהם, אם תשים לב אז הם לא מתחלקים בו יחד.";
+
+
                 }
             }
         }
+
+        
     }
 
 
@@ -346,7 +492,7 @@ public class Movment : MonoBehaviour
     public void Start()
     {
         //text desplay
-        textdisplay.text = "אוי! לאן הגעתי איפה אני? ??" + "\n" + "נראה שהכניסה שלי למערה קרסה, עלי למצוא דרך לצאת מכאן." + "\n" + "במידה ואתם רואים מישהו שיכול לעזור לנו עימדו לידו ולחצו על הכפתור L";
+        textdisplay.text = "<u> קווין תשע:</u> הו אני רואה שהצלחת להגיע עד כאן, אתה ממש קרוב למציאת אחיך ואני מקווה שלהצלת המלך היקר שלי." + "\n" + "על מנת שתוכל להגיע ליעדך עלייך לשים על הסטנד המוגבה את המספר הכי גבוהה שמתחלק בין שני האיברים התלויים על העץ."; ;
 
     }
 }

@@ -19528,7 +19528,7 @@ MonoBehaviour:
   jumpForceEffectByMomentomRatio: 0
   speed: 4
   Fill: 0
-  Instruction: {fileID: 0}
+  Instruction: {fileID: 7860178163108872488, guid: 7233e5d38ae362a44b047fbb4b700f04, type: 3}
   textdisplay: {fileID: 806929546}
   InvatoryForUSe: {fileID: 8604734364568313937, guid: b9860a6d52e2a394d97fddb0b6b0954c, type: 3}
 --- !u!1 &1292452625
