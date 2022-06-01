@@ -274,6 +274,7 @@ public class Movment : MonoBehaviour
                     Destroy(stand5);
                     Destroy(stand6);
                     //lev2done = true;
+
                     if (golded == false)
                     {
                         Instantiate(Goldwin3);

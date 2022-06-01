@@ -6627,7 +6627,7 @@ GameObject:
   - component: {fileID: 1440527610}
   m_Layer: 0
   m_Name: OrangeBird
-  m_TagString: Untagged
+  m_TagString: 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8394,7 +8394,7 @@ GameObject:
   - component: {fileID: 1826482496}
   m_Layer: 0
   m_Name: negativetwo
-  m_TagString: Mummy
+  m_TagString: 3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8625,7 +8625,7 @@ GameObject:
   - component: {fileID: 1871571931}
   m_Layer: 0
   m_Name: fourani0001
-  m_TagString: Untagged
+  m_TagString: 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9768,7 +9768,7 @@ GameObject:
   - component: {fileID: 2103123216}
   m_Layer: 0
   m_Name: negativetwo (1)
-  m_TagString: Mummy
+  m_TagString: 5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

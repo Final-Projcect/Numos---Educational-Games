@@ -10,6 +10,7 @@ public class HowManyDropsAlredy : MonoBehaviour
     bool unCheck = true;
     bool text = false;
     public int drops = 0;
+    public bool takedrop = false;
 
     public string potion;
     //public string color;
@@ -36,7 +37,8 @@ public class HowManyDropsAlredy : MonoBehaviour
     public void reset()
     {
         drops = 0;
-        textfind.text = drops.ToString();
+        //textfind.text = drops.ToString();
+        textfind.text = (drops/2).ToString();
     }
 
 
@@ -44,14 +46,27 @@ public class HowManyDropsAlredy : MonoBehaviour
 
     public void incresedrop()
     {
-        drops++;
+        Debug.Log(48);
+        if (takedrop == false)
+        {
+            drops = drops + 1;
+            Debug.Log("you have a drop");
+            takedrop = true;
+        }
+        else
+        {
+            takedrop = true;
+        }
+        Debug.Log(54);
+        
         Debug.Log("the bag have: " + drops);
-        textfind.text = drops.ToString();
+        textfind.text = (drops/2).ToString();
+       // textfind.text = (drops).ToString();
     }
 
     private void Start()
     {
-        textfind.text = drops.ToString();
+        textfind.text = (drops/2).ToString();
     }
 
     //public void Start()

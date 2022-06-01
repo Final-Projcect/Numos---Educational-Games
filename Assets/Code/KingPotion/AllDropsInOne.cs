@@ -33,13 +33,21 @@ public class AllDropsInOne : MonoBehaviour
 
 
         right.Add("cyan");
+        right.Add("cyan");//
         right.Add("gold");
         right.Add("gold");
+        right.Add("gold");//
+        right.Add("gold");//
+        right.Add("wine");
+        right.Add("wine");//
         right.Add("wine");
         right.Add("wine");
-        right.Add("wine");
+        right.Add("wine");//
+        right.Add("wine");//
         right.Add("gold");
         right.Add("gold");
+        right.Add("gold");//
+        right.Add("gold");//
     }
 
     public int marge()
@@ -54,7 +62,8 @@ public class AllDropsInOne : MonoBehaviour
         numwine = WinePotine.GetComponent<HowManyDropsAlredy>().dropsinbag();
         all = numcyan + numgold + numwine;
 
-        return all;
+        return all/2;
+        //return all;
 
     }
 
@@ -78,6 +87,7 @@ public class AllDropsInOne : MonoBehaviour
         all = marge();
         
         textonbag.text = all.ToString();
+        //textonbag.text = (all/2).ToString();
     }
 
     public bool checkcolors()

@@ -162,8 +162,17 @@ public class MovmentAtPotion : MonoBehaviour
         if (collision.gameObject.tag == potion)
         {
             if (Input.GetKeyDown(KeyPanel.Take))
-            {
-                collision.gameObject.GetComponent<HowManyDropsAlredy>().incresedrop();
+            //if (Input.GetKeyDown(KeyCode.Z))
+         {
+                bool droptake = true;
+                droptake = collision.gameObject.GetComponent<HowManyDropsAlredy>().takedrop = false;
+                Debug.Log("167");
+                if (droptake==false)
+                {
+                    collision.gameObject.GetComponent<HowManyDropsAlredy>().incresedrop();
+                    Debug.Log(177);
+                }
+                Debug.Log("180");
             }
         }
 
@@ -356,9 +365,10 @@ public class MovmentAtPotion : MonoBehaviour
             if (collision.gameObject.tag == allpotion)
             {
                 int howmac = collision.gameObject.GetComponent<AllDropsInOne>().marge();
-                if (howmac == 8)
-                {
-                    bool finish = collision.gameObject.GetComponent<AllDropsInOne>().checkcolors();
+            //if (howmac == 8)
+            if (howmac == 16)
+            {
+                bool finish = collision.gameObject.GetComponent<AllDropsInOne>().checkcolors();
                     if (finish == true)
                     {
                         Debug.Log("great job");
