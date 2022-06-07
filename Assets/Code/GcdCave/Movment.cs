@@ -48,6 +48,7 @@ public class Movment : MonoBehaviour
     public GameObject Goldwin1;
     public GameObject Goldwin2;
     public GameObject Goldwin3;
+    public GameObject item;
     public string coin;
     public string gold;
     int getgold = 0;
@@ -279,6 +280,7 @@ public class Movment : MonoBehaviour
                     {
                         Instantiate(Goldwin3);
                         golded = true;
+                        Instantiate(item);
                     }
 
 

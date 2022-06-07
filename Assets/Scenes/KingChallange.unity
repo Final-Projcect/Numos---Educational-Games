@@ -516,7 +516,6 @@ GameObject:
   - component: {fileID: 195989560}
   - component: {fileID: 195989559}
   - component: {fileID: 195989558}
-  - component: {fileID: 195989557}
   - component: {fileID: 195989556}
   - component: {fileID: 195989555}
   m_Layer: 0
@@ -550,7 +549,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 195989553}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60e09374ddc98b64fbe4684cc28dd4a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ea78097943ea7e42a5a500259c684e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 10
@@ -558,6 +557,7 @@ MonoBehaviour:
   speed: 4
   Instruction: {fileID: 406799977559887971, guid: e992cdb2d16b5a34dba594cda92435ca, type: 3}
   InvatoryForUSe: {fileID: 4501065120972529396, guid: 644f6ac733cf82b499e3f3f484368fbe, type: 3}
+  textdisplay: {fileID: 1123169885}
 --- !u!61 &195989556
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -584,23 +584,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 11.16, y: 9.81}
   m_EdgeRadius: 0
---- !u!114 &195989557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195989553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15630ca6a34dba1469b3ee7a800efc1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tag: TailorStufff
-  LaFarmaTag: Mrppayon
-  Stuff: {fileID: 0}
-  StuffParent: {fileID: 0}
-  IsAdoptedStuff: 0
 --- !u!61 &195989558
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4869,7 +4852,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 475f4837af487ce4a9e68bb227455e4c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ea1f0de4af2d5e44392c52bb4b184bcb, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1

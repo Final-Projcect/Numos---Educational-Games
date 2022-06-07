@@ -49,6 +49,9 @@ public class MovmentAtPotion : MonoBehaviour
     public string gold;
     int getgold = 0;
     int getcoin = 0;
+    public GameObject positem;
+    public bool posin = false;
+    public bool goldin = false;
 
     //potion
     public string potion;
@@ -67,6 +70,9 @@ public class MovmentAtPotion : MonoBehaviour
     //public GameObject welldone;
     bool done = false;
     bool alradyin = false;
+    bool textapper = false;
+    bool textappertemp = false;
+    bool textapperone = false;
 
     //toolsforscleanmachine
     public GameObject CyanPotion;
@@ -79,6 +85,11 @@ public class MovmentAtPotion : MonoBehaviour
 
     //block the next place
     //public GameObject block;
+
+
+    //achivment item
+    public InventoryItem poski;
+    
 
     private void Awake()
     {
@@ -142,6 +153,8 @@ public class MovmentAtPotion : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
+       // poski = new InventoryItem(positem.GetComponent<SpriteRenderer>().sprite, 1, 1, "Posking", "postion for king");
+        //InvatoryForUSe.GetComponent<InventoryGUI>().additem(poski);
 
         if (collision.gameObject.tag == coin)
         {
@@ -163,11 +176,11 @@ public class MovmentAtPotion : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyPanel.Take))
             //if (Input.GetKeyDown(KeyCode.Z))
-         {
+            {
                 bool droptake = true;
                 droptake = collision.gameObject.GetComponent<HowManyDropsAlredy>().takedrop = false;
                 Debug.Log("167");
-                if (droptake==false)
+                if (droptake == false)
                 {
                     collision.gameObject.GetComponent<HowManyDropsAlredy>().incresedrop();
                     Debug.Log(177);
@@ -179,7 +192,75 @@ public class MovmentAtPotion : MonoBehaviour
 
         if (collision.gameObject.tag == king)
         {
-            textdisplay.text = "<u> אפס:</u> אחי! מצאתי אותך! מה עשית עד עכשיו?" + "\n" + "על מנת לשמוע את מה שיש לאחי להגיד הקישו על V";
+            if (alradyin == false)
+            {
+                textdisplay.text = "<u> אפס:</u> אחי! מצאתי אותך! מה עשית עד עכשיו?" + "\n" + "על מנת לשמוע את מה שיש לאחי להגיד הקישו על V";
+                alradyin = true;
+            }
+            
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                textdisplay.text = "<u> אפס:</u> בוא נברח מכאן! תגיד לי איך לשחרר אותך ונחזור חזרה לארץ שלנו" + "\n" + "על מנת לשמוע את מה שיש לאחי להגיד הקישו על K";
+                if (textapper==false)
+                {
+                    Instantiate(say1);
+                    textapper = true;
+                }
+                
+                Debug.Log("hi hi hi");
+
+                 
+                
+            }
+
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                Debug.Log("ho ho ho");
+                alradyin = true;
+                
+                if (textappertemp == false)
+                {
+                    Instantiate(say2);
+                    textappertemp = true;
+                    say1.GetComponent<SpriteRenderer>().enabled = false;
+                }
+                
+                alradyin = true;
+                textdisplay.text = "<u> אפס:</u> אם כך תסביר לי איך להציל את המלך ואני אציל אותו למענך!!! לשמיעת תשובת האח הקישו על Q";
+            }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                Debug.Log("hom hom hmo");
+                alradyin = true;
+                
+                if (textapper == true && textappertemp == true)
+                {
+                    Instantiate(instructions);
+                    textapperone = true;
+                    say2.GetComponent<SpriteRenderer>().enabled = false;
+                }
+                
+                alradyin = true;
+                textdisplay.text = "<u> אפס:</u> הבנתי, אני אעשה את זה למענך!! במידה ותרצו רמז הקישו על U";
+            }
+
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                Debug.Log("hppo hppo hppo");
+                alradyin = true;
+                
+                if (textapperone == true)
+                {
+                    Instantiate(clue1);
+                    textapperone = false;
+                    instructions.GetComponent<SpriteRenderer>().enabled = false;
+                }
+                
+                alradyin = true;
+                textdisplay.text = "<u> אפס:</u> הבנתי !";
+            }
+            /*
             if (Input.GetKeyDown(KeyCode.V))
             {
                 Instantiate(say1);
@@ -211,7 +292,7 @@ public class MovmentAtPotion : MonoBehaviour
                             textdisplay.text = "<u> אפס:</u> על מנת לשאול את האח שאלות בחרו באחת האפשרויות הבאות:" + "\n" + "א. במידה ואני טועה איך אני יכול לאפס את המכונה? - לחצו על B" + "\n" + "ב. אפשר בבקשה רמז נוסף? - לחצו על C";
 
                             ///////////////////////////////////
-                             if (Input.GetKeyDown(KeyCode.B))
+                            if (Input.GetKeyDown(KeyCode.B))
                             {
                                 Destroy(youonyouron);
                                 alradyin = false;
@@ -356,18 +437,18 @@ public class MovmentAtPotion : MonoBehaviour
                         ///////////////////////////////////
                     }
                 }
-            }
+            }*/
         }
-                
-            
 
 
-            if (collision.gameObject.tag == allpotion)
-            {
-                int howmac = collision.gameObject.GetComponent<AllDropsInOne>().marge();
+
+
+                if (collision.gameObject.tag == allpotion)
+        {
+            int howmac = collision.gameObject.GetComponent<AllDropsInOne>().marge();
             //if (howmac == 8)
-            if (howmac == 16)
-            {
+            /*if (howmac == 16)
+            /{
                 bool finish = collision.gameObject.GetComponent<AllDropsInOne>().checkcolors();
                     if (finish == true)
                     {
@@ -376,8 +457,26 @@ public class MovmentAtPotion : MonoBehaviour
 
 
                 }
+            }*/
+
+            if (howmac == 5)
+            {
+                textdisplay.text = "כל הכבודדד!!!";
+                if (posin == false && goldin == false)
+                {
+                    Instantiate(positem);
+                    Instantiate(Goldwin1);
+                   // poski = new InventoryItem(positem.GetComponent<SpriteRenderer>().sprite, 1, 1, "Posking", "postion for king");
+                   // InvatoryForUSe.GetComponent<InventoryGUI>().additem(poski);
+                    posin = true;
+                    goldin = true;
+
+
+                }
+                
             }
 
+        }
     }
 
 
@@ -485,6 +584,6 @@ public class MovmentAtPotion : MonoBehaviour
     public void Start()
     {
         //text desplay
-        textdisplay.text = "<u>אפס:</u> מעניין האם אחי נמצא כאן, אם כן אשמח לתקשר איתו באמצעות לחיצה על המקש - L";
+        textdisplay.text = "<u>אפס:</u> נראה שהגעתי למקום שבו הם מחזיקים את כל היצורים האפלים של הממלכה, מעניין האם אוכל למצוא פה רמז כלשהו להצלת המלך";
     }
 }

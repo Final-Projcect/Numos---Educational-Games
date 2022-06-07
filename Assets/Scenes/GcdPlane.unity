@@ -874,6 +874,7 @@ MonoBehaviour:
   Goldwin1: {fileID: 8133232243723289535, guid: d6f0ca50542e7424a8fb387723643796, type: 3}
   Goldwin2: {fileID: 1064909716760951102, guid: fea9fdaed5183844eb1c30e3c740792a, type: 3}
   Goldwin3: {fileID: 2776667374599030689, guid: 7de5b414ea99a2d4492185edbce41356, type: 3}
+  item: {fileID: 171949227431848809, guid: bc7634a95569cf34abada12c50e0e826, type: 3}
   coin: coin
   gold: gold
   KingHead: {fileID: 828239798}
@@ -9647,7 +9648,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

@@ -50,6 +50,7 @@ TagManager:
   - 3
   - 4
   - 5
+  - item
   layers:
   - Default
   - TransparentFX

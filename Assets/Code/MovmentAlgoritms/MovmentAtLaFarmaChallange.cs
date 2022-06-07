@@ -19,6 +19,9 @@ public class MovmentAtLaFarmaChallange : MonoBehaviour
 
     public GameObject InvatoryForUSe;
 
+    public string gold;
+    public int getgold;
+
 
 
     protected Vector3 NewPosition()
@@ -62,6 +65,17 @@ public class MovmentAtLaFarmaChallange : MonoBehaviour
 
 
 
+    }
+
+    public void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == gold)
+        {
+            getgold = getgold + 1;
+            Debug.Log("you have: " + getgold);
+            SingleToon.getInstance().curmoney.gain(500);
+            SingleToon.getInstance().curscore.raise(50);
+        }
     }
 
 

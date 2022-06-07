@@ -42,6 +42,12 @@ public class RandomeNumbers : MonoBehaviour
     public AudioSource Seccess;
     private AudioSource happy;
 
+    //achiment
+    public bool ingold = false;
+    public bool itemin = false;
+    public GameObject item;
+    public GameObject gold;
+
 
 
     //zero container
@@ -218,6 +224,12 @@ public class RandomeNumbers : MonoBehaviour
             Debug.Log("line 207");
             SingleToon.getInstance().curmoney.gain(50);
             SingleToon.getInstance().curscore.raise(150);
+            if (itemin == false && ingold == false)
+            {
+                Instantiate(item);
+                Instantiate(gold);
+            }
+            
             ok = true;
 
             for (int i = 0; i < TailorPackage.Length; i++)

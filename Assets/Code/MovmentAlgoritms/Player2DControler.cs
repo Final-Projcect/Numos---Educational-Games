@@ -14,7 +14,7 @@ public class Player2DControler : MonoBehaviour
     public float jumpForce = 10;
     public float jumpForceEffectByMomentomRatio;
     public float speed = 4f;
-
+    public bool inShip = false;
 
     //for coliision use
     public bool isGrounded = false;
@@ -43,6 +43,13 @@ public class Player2DControler : MonoBehaviour
     public bool onit = false;
     public GameObject leftlamnd;
 
+    public GameObject rightlandcol;
+    public GameObject leftlandcol;
+    public GameObject rightl2andcol;
+    public GameObject left2landcol;
+    public string ongrassland1;
+    public string ongrassland2;
+
 
     public Vector3 OnTriggerEnter2D(Collider2D col)
     {
@@ -62,42 +69,132 @@ public class Player2DControler : MonoBehaviour
         if (collision.gameObject.tag == Coin)
         {
             gotcoins = gotcoins + 1;
-            Debug.Log("you have: " + gotcoins);
+            //Debug.Log("you have: " + gotcoins);
             SingleToon.getInstance().curmoney.gain(100);
             SingleToon.getInstance().curscore.raise(10);
         }
+        //leftlamnd.GetComponent<BoxCollider2D>().enabled = false;
 
-        if (collision.gameObject.tag == ship)
+        if (collision.gameObject.tag == ship && !inShip)
         {
 
             ships = collision.gameObject;
             float height;
 
-            StuffParent = collision.transform.parent;
-            collision.gameObject.transform.parent = this.transform;
+            //StuffParent = collision.transform.parent;
+            //collision.gameObject.transform.parent = this.transform;
             collision.gameObject.transform.localPosition = Vector3.zero;
-            ships.transform.parent = StuffParent;
+            ships.transform.parent = this.transform;
             height = this.GetComponent<SpriteRenderer>().bounds.size.y;
             ships.transform.position = new Vector3(transform.position.x, transform.position.y - (height / 4), transform.position.z);
-            Debug.Log("i got a ship");
-            inisidted = true;
-            
+            //Debug.Log("i got a ship");
+            //inisidted = true;
+            inShip = true;
+            StartCoroutine(getOutOfShip());
 
         }
 
-        if (collision.gameObject.tag == onland && inisidted == true && onit == false )
-        {
-            Destroy(ships);
+       // if (collision.gameObject.tag == onland && inisidted == true && onit == false )
+            if (collision.gameObject.tag == onland)
+            {
+            float height;
+            inisidted = false;
+            ships.transform.parent = StuffParent;
+            height = this.GetComponent<SpriteRenderer>().bounds.size.y;
+            ships.transform.position = new Vector3(transform.position.x, transform.position.y - height / 4, transform.position.z);
+            //Debug.Log("mon bian 89: " + ships.transform.position);
+            //Destroy(ships);
+            var sr = ships.GetComponent<SpriteRenderer>();
+            sr.flipX = !sr.flipX;
+            ships.gameObject.transform.parent = null;
             //Destroy(rightland);
             ///
-           // Instantiate(leftlamnd);
+            //Instantiate(leftlamnd);
             onit = true;
-            Instantiate(returnship);
-            inisidted = false;
+            //Instantiate(returnship);
+            //inisidted = false;
+            collision.enabled = false;
+            rightlandcol = collision.gameObject;
+            leftlamnd.GetComponent<BoxCollider2D>().enabled = true;
+
+            //disable first obsicale
             }
 
-        //
-        if (collision.gameObject.tag == returnland && inisidted == false && onit ==true)
+        ////continue from here
+        if (collision.gameObject.tag == returnland && onit==true)
+        {
+            float height;
+            inisidted = false;
+            rightlandcol.GetComponent<BoxCollider2D>().enabled = true;
+            ships.transform.parent = StuffParent;
+            height = this.GetComponent<SpriteRenderer>().bounds.size.y;
+            ships.transform.position = new Vector3(transform.position.x, transform.position.y - height / 4, transform.position.z);
+            //Debug.Log("mon bian 89: " + ships.transform.position);
+            //Destroy(ships);
+            var sr = ships.GetComponent<SpriteRenderer>();
+            sr.flipX = !sr.flipX;
+            ships.gameObject.transform.parent = null;
+            //Destroy(rightland);
+            ///
+            collision.enabled = false;
+            //leftlandcol.GetComponent<BoxCollider2D>().enabled = false;
+            //Instantiate(leftlamnd);
+            onit = true;
+            //Instantiate(returnship);
+            inisidted = false;
+            collision.enabled = false;
+        }
+
+        if (collision.gameObject.tag == ongrassland1)
+        {
+            float height;
+            inisidted = false;
+            ship2.transform.parent = StuffParent2;
+            height = this.GetComponent<SpriteRenderer>().bounds.size.y;
+            ship2.transform.position = new Vector3(transform.position.x, transform.position.y - height / 4, transform.position.z);
+            //Debug.Log("mon bian 89: " + ships.transform.position);
+            //Destroy(ships);
+            var sr = ship2.GetComponent<SpriteRenderer>();
+            sr.flipX = !sr.flipX;
+            ship2.gameObject.transform.parent = null;
+            //Destroy(rightland);
+            ///
+            //Instantiate(leftlamnd);
+            onit = true;
+            //Instantiate(returnship);
+            //inisidted = false;
+            collision.enabled = false;
+            rightl2andcol = collision.gameObject;
+            left2landcol.GetComponent<BoxCollider2D>().enabled = true;
+
+            //disable first obsicale
+        }
+
+        ////continue from here
+        if (collision.gameObject.tag == ongrassland2 && onit == true)
+        {
+            float height;
+            inisidted = false;
+            rightlandcol.GetComponent<BoxCollider2D>().enabled = true;
+            ship2.transform.parent = StuffParent2;
+            height = this.GetComponent<SpriteRenderer>().bounds.size.y;
+            ship2.transform.position = new Vector3(transform.position.x, transform.position.y - height / 4, transform.position.z);
+            //Debug.Log("mon bian 89: " + ships.transform.position);
+            //Destroy(ships);
+            var sr = ship2.GetComponent<SpriteRenderer>();
+            sr.flipX = !sr.flipX;
+            ship2.gameObject.transform.parent = null;
+            //Destroy(rightland);
+            ///
+            collision.enabled = false;
+            //leftlandcol.GetComponent<BoxCollider2D>().enabled = false;
+            //Instantiate(leftlamnd);
+            onit = true;
+            //Instantiate(returnship);
+            inisidted = false;
+            collision.enabled = false;
+        }
+        /*if (collision.gameObject.tag == returnland && inisidted == false && onit ==true)
         {
             Destroy(returnship);
             Destroy(rightland);
@@ -105,10 +202,16 @@ public class Player2DControler : MonoBehaviour
             onit = true;
             Instantiate(ships);
             inisidted = true;
-        }
+        }*/
         ////
 
 
+    }
+
+    IEnumerator getOutOfShip()
+    {
+        yield return new WaitForSeconds(5f);
+        inShip = false;
     }
 
     protected Vector3 NewPosition()
@@ -142,7 +245,7 @@ public class Player2DControler : MonoBehaviour
         else if (Input.GetKeyDown(KeyPanel.EnterToPlaces))
 
         {
-            Debug.Log(transform.position);
+            //Debug.Log(transform.position);
             double rightEnternceLaFarmaBaginDistance = -15.55;
             double leftEnternceLfarmaEndDistance = -13.55;
             Vector3 move = transform.position + Vector3.down;
@@ -170,7 +273,7 @@ public class Player2DControler : MonoBehaviour
             if (transform.position.x > LeftCaveLimit && transform.position.x < rightCaveLimit)
             {
 
-                Debug.Log("here i am"); 
+               // Debug.Log("here i am"); 
                 Location.SaveLocation(transform.position);
                // Debug.Log(transform.position);
                 SceneManager.LoadScene("Cave");
@@ -185,7 +288,7 @@ public class Player2DControler : MonoBehaviour
             if (transform.position.x > LeftPalace && transform.position.x < rightPalace)
             {
 
-                Debug.Log("here i am");
+               // Debug.Log("here i am");
                 Location.SaveLocation(transform.position);
                 // Debug.Log(transform.position);
                 SceneManager.LoadScene("CloseCastle");
@@ -215,7 +318,7 @@ public class Player2DControler : MonoBehaviour
             if (transform.position.x > LeftlanderyLimita && transform.position.x < LeftlanderyLimitb || transform.position.x > rightlanderyLimitb && transform.position.x < rightlanderyLimita)
             {
 
-                Debug.Log("here i am");
+               // Debug.Log("here i am");
                 Location.SaveLocation(transform.position);
                 //Debug.Log(transform.position);
                 SceneManager.LoadScene("TheLanderyBase");
@@ -232,7 +335,7 @@ public class Player2DControler : MonoBehaviour
             if (transform.position.x > Leftroofkeyb && transform.position.x < rightroofkey)
             {
 
-                Debug.Log("here i am");
+               // Debug.Log("here i am");
                 Location.SaveLocation(transform.position);
                 //Debug.Log(transform.position);
                 SceneManager.LoadScene("KeyOnTheRoof");
@@ -336,7 +439,16 @@ public class Player2DControler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-                transform.position = NewPosition();
+        transform.position = NewPosition();
+        var parent = ships.transform.parent;
+        if (parent != null)
+        {
+            Debug.Log(parent.gameObject.name);
+        }
+        else
+        {
+            Debug.Log(ships.name);
+        }
     }
 
     

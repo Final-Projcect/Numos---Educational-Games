@@ -51,6 +51,12 @@ public class GuasstusNewLevel : MonoBehaviour
     bool combinationGot = false;
     bool NumForDivisGot = false;
 
+    bool goldins = false;
+    bool itemins = false;
+    public GameObject gold;
+    public GameObject item;
+
+
     private AudioSource happy;
 
     //method to put diffrent prime numbers into bricks
@@ -205,6 +211,17 @@ public class GuasstusNewLevel : MonoBehaviour
 
             SingleToon.getInstance().curmoney.gain(100);
             SingleToon.getInstance().curscore.raise(300);
+            if (itemins==false)
+            {
+                Instantiate(item);
+                itemins = true;
+            }
+
+            if (goldins==false)
+            {
+                Instantiate(gold);
+                goldins = true;
+            }
 
             //SecondBase();
             return ok;

@@ -164,7 +164,7 @@ public class PlayerMovement2 : MonoBehaviour
             {
                 firstsix = collision.gameObject;
                 //text desplay
-                textdisplay.text = "<u> המשרת האוויל:</u> שלום לך, אתה בטח רוצה לדעת האם יש דרך נוספת לצאת מהמערה, טוב..בוא נתחיל מזה שבתור התחלה " + "\n" + "אשמח אם תוכל בבקשה לשים 2 חרפוג'י מערות לתוך הקערה";
+                textdisplay.text = "<u> המשרת האוויל:</u> שלום לך, אתה בטח רוצה לדעת האם יש דרך נוספת לצאת מהמערה, טוב..בוא נתחיל מזה שבתור התחלה " + "\n" + "אשמח אם תוכל בבקשה לשים 2 חרפוג'י מערות לתוך הקערה" + "\n" + "על מנת לתפוס חרפוג'י יש לעמוד מעל אחד וללחוץ על המקש T , ועל מנת להניח אותו בתוך הקערה יש לגשת אל הקערה (עם החרפוג'י שתפסנו) וללחוץ על G";
             }
             alredytalk = true;
 
@@ -199,6 +199,7 @@ public class PlayerMovement2 : MonoBehaviour
                 collision.gameObject.transform.localPosition = Vector3.zero;
                 alredyrabbitinhand = true;
                 Debug.Log("yay we got rabbit");
+                textdisplay.text = "כל הכבוד תפסת חרפוג'י! כעת עלייך להניח אותו בקערה על ידי עמידה לידה ולחיצה על המקש G";
                 
 
 
@@ -252,18 +253,21 @@ public class PlayerMovement2 : MonoBehaviour
                     {
                         Instantiate(rabb);
                         rab++;
+                        textdisplay.text = "איזה יופי, הנחתם חרפוג'י אחד בקערה!! עליכם למצוא עוד חרפוג'ים!";
                     }
 
                     else if (rab == 1)
                     {
                         Instantiate(rabb2);
                         rab++;
+                        //textdisplay.text = "איזה יופי, הנחתם שני חרפוג'ים בקערה!! עליכם למצוא עוד חרפוג'ים!";
                     }
 
                     else if (rab == 2)
                     {
                         Instantiate(rabb3);
                         rab++;
+                        textdisplay.text = "איזה יופי, הנחתם שלושה בקערה!! כמה לדעתכם עוד חרפוג'ים צריך על מנת שיהיה ארבעה חרפוג'ים ב?";
                     }
 
                     else if (rab == 3)
@@ -304,7 +308,7 @@ public class PlayerMovement2 : MonoBehaviour
                            
                            if (jarrabbit == 5)
                           {
-                            textdisplay.text = "<u> המשרת האוויל:</u> כל הכבוד! יש לנו חמש חרפוג'ים בתוך הקערה, על מנת לצאת מהמערה עליכם לדרוך על הלבנים המעופפות ולהעביר אבנים למקומם על ציר המספרים החיוביים שליליים.";
+                            textdisplay.text = "<u> המשרת האוויל:</u> כל הכבוד! יש לנו חמש חרפוג'ים בתוך הקערה, על מנת לצאת מהמערה עליכם לדרוך על הלבנים המעופפות ולהעביר אבנים למקומם על ציר המספרים החיוביים שליליים." + "\n" + "הלבנים החוסמות את היציאה מהמערה נמצאות בצידה השני, המשיכו עם מסלול הלבה והקרח עד שתגיעו אליהם" + "\n" + "על מנת לתפוס לבנה יש ללחוץ על המקש T במקביל ועל מנת להניח אותם יש ללחוץ על החץ המצביע מעלה ועל המקש G, השתדלו להניח את הלבנים במקום הנכון על ציר הלבה קרח המספרי שלנו";
                             Destroy(firstsix);
                             Destroy(block);
                             Instantiate(sixchar);

@@ -57,6 +57,11 @@ public class Rand : MonoBehaviour
         int min = -30;
 
         num = UnityEngine.Random.Range(min, max);
+        while (num==0)
+        {
+            num = UnityEngine.Random.Range(min, max);
+        }
+
         if (availableNumbers.Contains(num))
         {
             randomizer(index);

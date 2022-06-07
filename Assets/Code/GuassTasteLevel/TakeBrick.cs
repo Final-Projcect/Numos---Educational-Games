@@ -15,6 +15,10 @@ public class TakeBrick : MonoBehaviour
     int CurrectBrickFirstLevelBase3 = 0;
     public int a = 0;
 
+    public string gold;
+    public string item;
+    public int getgold = 0;
+
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.tag == tag)
@@ -36,6 +40,14 @@ public class TakeBrick : MonoBehaviour
             }
 
 
+        }
+
+        if (collision.gameObject.tag == gold)
+        {
+            getgold = getgold + 1;
+            Debug.Log("you have: " + getgold);
+            SingleToon.getInstance().curmoney.gain(500);
+            SingleToon.getInstance().curscore.raise(50);
         }
 
         if (collision.gameObject.tag == PyrmidTag)

@@ -16,16 +16,21 @@ public class InventoryGUI : MonoBehaviour
     // temp
     public SpriteRenderer[] itemObj;
 
+    /* private Inventory inventory;
+     private List<GameObject> cells;
+     private List<TextMeshProUGUI> itemTexts;*/
+
     private Inventory inventory;
     private List<GameObject> cells;
     private List<TextMeshProUGUI> itemTexts;
-    
+
 
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("im on");
         // for testing purposes
-        inventory = new Inventory(5);
+        inventory = new Inventory(10);
         foreach(var item in itemObj)
         {
             var inventoryItem = new ExampleInventoryItem(item.sprite);
@@ -39,6 +44,12 @@ public class InventoryGUI : MonoBehaviour
 
         //FocusItem(inventory[0]);
 
+    }
+
+    public void additem (InventoryItem item)
+    {
+        Debug.Log("yay i got an item");
+        inventory.Add(item);
     }
 
     void CreateCells()

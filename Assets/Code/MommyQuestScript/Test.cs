@@ -22,7 +22,7 @@ public class Test : MonoBehaviour
     {
 
        
-            Debug.Log("oouch");
+            //Debug.Log("oouch");
             //SingleToon.getInstance().curlife.damage(5);
 
 

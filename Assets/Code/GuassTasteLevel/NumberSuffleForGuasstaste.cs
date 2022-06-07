@@ -46,6 +46,12 @@ public class NumberSuffleForGuasstaste : MonoBehaviour
     bool combinationGot = false;
     bool NumForDivisGot = false;
 
+    //achivments
+    bool goldins = false;
+    bool itemins = false;
+    public GameObject gold;
+    public GameObject item;
+
     //method to put diffrent prime numbers into bricks
     public int randomindex()
     {
@@ -271,6 +277,17 @@ public class NumberSuffleForGuasstaste : MonoBehaviour
 
             SingleToon.getInstance().curmoney.gain(100);
             SingleToon.getInstance().curscore.raise(300);
+            if (itemins == false)
+            {
+                Instantiate(item);
+                itemins = true;
+            }
+
+            if (goldins == false)
+            {
+                Instantiate(gold);
+                goldins = true;
+            }
 
             //SecondLevel();
             return ok;

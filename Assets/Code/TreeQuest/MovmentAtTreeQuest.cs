@@ -66,7 +66,7 @@ public class MovmentAtTreeQuest : MonoBehaviour
         //W key down -> open invatory
         else if (Input.GetKeyDown(KeyCode.W))
         {
-            Debug.Log("hi" + transform.position);
+            //Debug.Log("hi" + transform.position);
             return transform.position;
         }
         //9.8 -3.5 00 - move to cave
