@@ -143,6 +143,14 @@ public class MovmentAtLAndery : MonoBehaviour
             return transform.position;
         }
 
+        //P key down -> giving things in levels
+        else if (Input.GetKeyDown(KeyCode.P) || Input.GetKey("p"))
+        {
+            //need to put here an option to gave object and destroy it
+            SceneManager.LoadScene("PausePage");
+            return transform.position;
+        }
+
 
         else
         {

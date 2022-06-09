@@ -5984,7 +5984,7 @@ MonoBehaviour:
   Seccess: {fileID: 1283757643322958740, guid: a06628fe61be67140bcb45323ffe8c04, type: 3}
   ingold: 0
   itemin: 0
-  item: {fileID: 706331478776761356, guid: 7f8007c6ef7e2dc41a2693c4abd89db3, type: 3}
+  item: {fileID: 3259293557889730183, guid: 243c38bb8a688d144bb5b8e82e5eb00a, type: 3}
   gold: {fileID: 2656131166133314711, guid: 8f9ab502e29e7e04d98ef7d0a3920d46, type: 3}
 --- !u!61 &638444806
 BoxCollider2D:

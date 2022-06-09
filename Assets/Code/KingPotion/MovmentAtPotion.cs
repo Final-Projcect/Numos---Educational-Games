@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovmentAtPotion : MonoBehaviour
 {
@@ -133,6 +134,14 @@ public class MovmentAtPotion : MonoBehaviour
             return transform.position;
         }
 
+        //P key down -> giving things in levels
+        else if (Input.GetKeyDown(KeyCode.P) || Input.GetKey("p"))
+        {
+            //need to put here an option to gave object and destroy it
+            SceneManager.LoadScene("PausePage");
+            return transform.position;
+        }
+
         //clean the machine
         else if (Input.GetKeyDown(KeyCode.E))
         {
@@ -223,6 +232,14 @@ public class MovmentAtPotion : MonoBehaviour
                     Instantiate(say2);
                     textappertemp = true;
                     say1.GetComponent<SpriteRenderer>().enabled = false;
+                   // say1.GetComponent<Transform>().position.y = -124;
+                    //say1.GetComponent<TextMeshPro>().enabled = false;
+                   // say1.GetComponent<GameObject>().GetComponent<TextMeshPro>().enabled = false;
+                  //  if (say1.gameObject != null)
+                 //   {
+                  //      Destroy(say1);
+                 //   }
+                   // 
                 }
                 
                 alradyin = true;
@@ -239,6 +256,11 @@ public class MovmentAtPotion : MonoBehaviour
                     Instantiate(instructions);
                     textapperone = true;
                     say2.GetComponent<SpriteRenderer>().enabled = false;
+                    //say2.GetComponent<GameObject>().GetComponent<TextMeshPro>().enabled = false;
+                    //if (say2.gameObject != null)
+                    //{
+                    //     Destroy(say2);
+                    //  }
                 }
                 
                 alradyin = true;
@@ -252,8 +274,9 @@ public class MovmentAtPotion : MonoBehaviour
                 
                 if (textapperone == true)
                 {
-                    Instantiate(clue1);
+                    Instantiate(instructions);
                     textapperone = false;
+                   // Destroy(say1);
                     instructions.GetComponent<SpriteRenderer>().enabled = false;
                 }
                 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovmentAtKingBoss : MonoBehaviour
 {
@@ -53,6 +54,14 @@ public class MovmentAtKingBoss : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.M))
         {
             Instantiate(InvatoryForUSe);
+            return transform.position;
+        }
+
+        //P key down -> giving things in levels
+        else if (Input.GetKeyDown(KeyCode.P) || Input.GetKey("p"))
+        {
+            //need to put here an option to gave object and destroy it
+            SceneManager.LoadScene("PausePage");
             return transform.position;
         }
 

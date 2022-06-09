@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8185385041399497330}
   - component: {fileID: 4066373227363081640}
   - component: {fileID: 7974591344505083238}
+  - component: {fileID: -5813858909093767389}
   m_Layer: 0
   m_Name: goldtabon
   m_TagString: gold
@@ -129,3 +130,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.09, y: 5.01}
   m_EdgeRadius: 0
+--- !u!114 &-5813858909093767389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6534307313309386420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d68443227090a604ab8fa474cb9207d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: Player

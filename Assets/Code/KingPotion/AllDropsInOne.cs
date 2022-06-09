@@ -62,7 +62,7 @@ public class AllDropsInOne : MonoBehaviour
         numwine = WinePotine.GetComponent<HowManyDropsAlredy>().dropsinbag();
         all = numcyan + numgold + numwine;
 
-        return all/2;
+        return all;
         //return all;
 
     }

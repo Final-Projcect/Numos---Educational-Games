@@ -19331,7 +19331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 10
   jumpForceEffectByMomentomRatio: 0
-  speed: 33
+  speed: 12
   inShip: 0
   isGrounded: 0
   canMomentumJump: 0

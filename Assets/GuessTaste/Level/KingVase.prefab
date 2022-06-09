@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8009048605855510441}
   - component: {fileID: 8273232901933357883}
   - component: {fileID: 7381896170541801396}
+  - component: {fileID: 7210225978915188970}
   m_Layer: 0
   m_Name: KingVase
   m_TagString: item
@@ -109,3 +110,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.65, y: 5.21}
   m_EdgeRadius: 0
+--- !u!114 &7210225978915188970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8200747466708550254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d68443227090a604ab8fa474cb9207d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: Player

@@ -275,9 +275,12 @@ public class Player2DControler : MonoBehaviour
 
                // Debug.Log("here i am"); 
                 Location.SaveLocation(transform.position);
-               // Debug.Log(transform.position);
+                // Debug.Log(transform.position);
                 SceneManager.LoadScene("Cave");
+                // SceneManager.LoadScene("Trailer");
+                //SceneManager.LoadScene("KingChallange");
                 
+
                 return transform.position;
                 
             }

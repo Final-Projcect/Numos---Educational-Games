@@ -6601,7 +6601,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.849492, y: -2.880581}
+  m_Offset: {x: -2.7150764, y: -2.880581}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6612,7 +6612,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 17.882254, y: 16.145786}
+  m_Size: {x: 21.018631, y: 16.145786}
   m_EdgeRadius: 0
 --- !u!4 &603366276
 Transform:
@@ -12349,7 +12349,7 @@ GameObject:
   - component: {fileID: 1191647253}
   m_Layer: 8
   m_Name: BotoomColidderBlock (2)
-  m_TagString: Lava
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14878,7 +14878,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -4.504122, y: -0.7834783}
+  m_Offset: {x: -1.0119147, y: 2.2397032}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -14889,7 +14889,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7.1314507, y: 3.6030445}
+  m_Size: {x: 0.14703608, y: 9.649407}
   m_EdgeRadius: 0
 --- !u!212 &1425781945
 SpriteRenderer:

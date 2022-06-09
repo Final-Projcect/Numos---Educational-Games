@@ -81,6 +81,7 @@ public class TakeAStone : MonoBehaviour
                 height = this.GetComponent<SpriteRenderer>().bounds.size.y;
                 AStone.transform.position = new Vector3(transform.position.x, transform.position.y - height / 4, transform.position.z);
                 Debug.Log("mon bian 89: " + AStone.transform.position);
+                
                 thestonenum = AStone.GetComponent<NumOnStone>().NumAtSign();
 
                if (collision.gameObject.tag == oneonezero)
