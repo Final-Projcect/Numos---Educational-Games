@@ -24,6 +24,29 @@ public class MovmentAtKingBoss : MonoBehaviour
     //text display
     public TextMeshProUGUI textdisplay;
 
+    //begin level
+    public bool startgame = false;
+    public bool attackManger = false;
+
+    //levels items
+    public GameObject attackMang;
+
+    //level achiments 
+    public GameObject gold;
+    public GameObject item;
+    public GameObject[] coinsone;
+    public GameObject[] coinstwo;
+    public GameObject[] coinsthree;
+    public GameObject relseking;
+
+    //Aritmatic Monster
+    public GameObject fourhands;
+    public GameObject therehands;
+    public GameObject twohands;
+    public GameObject onehands;
+
+
+
     protected Vector3 NewPosition()
     {
         //leftMovement
@@ -65,6 +88,31 @@ public class MovmentAtKingBoss : MonoBehaviour
             return transform.position;
         }
 
+        //click on c
+        else if (Input.GetKeyDown(KeyCode.C) || Input.GetKey("c"))
+        {
+            SceneManager.LoadScene("KingPotionNew");
+            return transform.position; // Pass into ohter secne
+        }
+
+        //click on b
+        else if (Input.GetKeyDown(KeyCode.B) || Input.GetKey("b"))
+        {
+
+            textdisplay.text = "<u>אחד:</u> אין לך סיכוי להגיע למלך לפני שתביס את מפלצת האריטמיק שלי!" + "\n" + "מה התגובה שלך:" + "\n" + " א. לברוח - לחצו על C" + "\n" + "ב. להלחם במפלצת ולהציל את המלך - לחצו על A";
+            return transform.position;
+        }
+
+
+        //click on a
+        else if (Input.GetKeyDown(KeyCode.A) || Input.GetKey("a"))
+        {
+
+            textdisplay.text = "<u>אחד:</u> אני רואה שאומץ לא חסר לך, אבל חבל! אין לך סיכוי לנצח את מפלצת האירטמיק, כל רגל של האלופה הקטנה שלי כוללת הוכחה מסוג אחר, ככה שעל מנת לנצח אותה עליך לבחור את הכלים המתאימים ולהוכיח אותם, דבר שהוא לא אפשרי מוחעחעחעחע מפלצת האריטמיק אל תוותרי!!, ";
+            startgame = true;
+            AttackAritmatic();
+            return transform.position;
+        }
 
         else
         {
@@ -73,6 +121,19 @@ public class MovmentAtKingBoss : MonoBehaviour
 
 
 
+    }
+
+    
+    public void AttackAritmatic ()
+    {
+        if (startgame == true)
+        {
+            if (attackManger==false)
+            {
+                attackMang.GetComponent<SpriteRenderer>().enabled = false;
+                attackManger = true;
+            }
+        }
     }
 
 
@@ -86,6 +147,6 @@ public class MovmentAtKingBoss : MonoBehaviour
     public void Start()
     {
         //text desplay
-        textdisplay.text = "<u>אחד:</u>אוי לא! איך הגעת לכאן? טוב, זה לא באמת משנה, אין לך סיכוי לעצור אותי ולעמוד מול מפלצת האריתמטיק שלי!!! מוחעחעחעחע ";
+        textdisplay.text = "<u>אחד:</u>אוי לא! איך הגעת לכאן? טוב, זה לא באמת משנה, אין לך סיכוי לעצור אותי ולעמוד מול מפלצת האריתמטיק שלי!!! מוחעחעחעחע " +  "\n" + "א. להילחם במפלצת ולהציל את המלך - לחצו על A" + "\n" + "ב. להציל את המלך ולברוח - לחצו על B" + "\n" + "ג. לברוח - לחצו על C";
     }
 }

@@ -599,9 +599,9 @@ GameObject:
   - component: {fileID: 974416627}
   - component: {fileID: 974416626}
   - component: {fileID: 974416625}
-  - component: {fileID: 974416624}
   - component: {fileID: 974416623}
   - component: {fileID: 974416622}
+  - component: {fileID: 974416624}
   - component: {fileID: 974416621}
   m_Layer: 0
   m_Name: AnimatedZero
@@ -680,12 +680,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 974416620}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 463b61291b791dd42848f92bc8dda59c, type: 3}
+  m_Script: {fileID: 11500000, guid: 92f57a66ee707c545978679c8a385f91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 10
   jumpForceEffectByMomentomRatio: 0
   speed: 10
+  inShip: 0
   isGrounded: 0
   canMomentumJump: 0
   groundLayer:
@@ -749,7 +750,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -886622429
-  m_SortingLayer: 22
+  m_SortingLayer: 27
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 91bd10c2317eb094386e00d7c61b0d6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
