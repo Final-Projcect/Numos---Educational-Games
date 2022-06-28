@@ -243,7 +243,9 @@ public class Movment : MonoBehaviour
                     //lev3done = true;
                     if (golded == false)
                     {
-                        Instantiate(Goldwin2);
+                        Goldwin2.GetComponent<SpriteRenderer>().enabled = true;
+                        Goldwin2.GetComponent<BoxCollider2D>().enabled = true;
+                        //Instantiate(Goldwin2);
                         golded = true;
                     }
 
@@ -287,7 +289,8 @@ public class Movment : MonoBehaviour
 
                     if (golded == false)
                     {
-                        Instantiate(Goldwin3);
+                        Goldwin3.GetComponent<SpriteRenderer>().enabled = true;
+                        Goldwin3.GetComponent<BoxCollider2D>().enabled = true;
                         golded = true;
                         Instantiate(item);
                     }
@@ -379,7 +382,8 @@ public class Movment : MonoBehaviour
 
                         if (golded == false)
                         {
-                            Instantiate(Goldwin1);
+                            Goldwin1.GetComponent<SpriteRenderer>().enabled = true;
+                            Goldwin1.GetComponent<BoxCollider2D>().enabled = true;
                             golded = true;
                         }
 

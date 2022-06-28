@@ -36,6 +36,7 @@ public class MovmentAtPotion : MonoBehaviour
     //the invatory object
     public GameObject Instruction;
     private GameObject fordestroy;
+    public int howmac;
     bool exist = false;
 
     //check if misson done
@@ -74,6 +75,8 @@ public class MovmentAtPotion : MonoBehaviour
     bool textapper = false;
     bool textappertemp = false;
     bool textapperone = false;
+    public GameObject wallexit;
+    public string wayout;
 
     //toolsforscleanmachine
     public GameObject CyanPotion;
@@ -181,7 +184,12 @@ public class MovmentAtPotion : MonoBehaviour
             SingleToon.getInstance().curscore.raise(50);
         }
 
-        if (collision.gameObject.tag == potion)
+        if (collision.gameObject.tag == wayout)
+        {
+            SceneManager.LoadScene("KingChallange");
+        }
+
+       /* if (collision.gameObject.tag == potion)
         {
             if (Input.GetKeyDown(KeyPanel.Take))
             //if (Input.GetKeyDown(KeyCode.Z))
@@ -196,7 +204,7 @@ public class MovmentAtPotion : MonoBehaviour
                 }
                 Debug.Log("180");
             }
-        }
+        }*/
 
 
         if (collision.gameObject.tag == king)
@@ -466,39 +474,56 @@ public class MovmentAtPotion : MonoBehaviour
 
 
 
-                if (collision.gameObject.tag == allpotion)
+        if (collision.gameObject.tag == allpotion)
         {
-            int howmac = collision.gameObject.GetComponent<AllDropsInOne>().marge();
-            //if (howmac == 8)
-            /*if (howmac == 16)
-            /{
+            howmac = collision.gameObject.GetComponent<AllDropsInOne>().marge();
+            if (howmac == 8)
+
+            {
                 bool finish = collision.gameObject.GetComponent<AllDropsInOne>().checkcolors();
-                    if (finish == true)
+                if (finish == true)
+                {
+                    Debug.Log("great job");
+                    if (posin == false && goldin == false)
                     {
-                        Debug.Log("great job");
+                        Instantiate(positem);
+                        Goldwin1.GetComponent<SpriteRenderer>().enabled = true;
+                        Goldwin1.GetComponent<BoxCollider2D>().enabled = true;
+                        // poski = new InventoryItem(positem.GetComponent<SpriteRenderer>().sprite, 1, 1, "Posking", "postion for king");
+                        // InvatoryForUSe.GetComponent<InventoryGUI>().additem(poski);
+                        posin = true;
+                        goldin = true;
+                        wallexit.GetComponent<BoxCollider2D>().enabled = true;
+                        textdisplay.text = "<u>אפס:</u> יאי הצלחתי, מעניין מה נמצא מעבר למערה, מוטב שהמשיך ללכת לקיר השמאלי ואתקדם ממנו הלאה";
                     }
 
 
                 }
-            }*/
-
-            if (howmac == 5)
-            {
-                textdisplay.text = "כל הכבודדד!!!";
-                if (posin == false && goldin == false)
+                else
                 {
-                    Instantiate(positem);
-                    Instantiate(Goldwin1);
-                   // poski = new InventoryItem(positem.GetComponent<SpriteRenderer>().sprite, 1, 1, "Posking", "postion for king");
-                   // InvatoryForUSe.GetComponent<InventoryGUI>().additem(poski);
-                    posin = true;
-                    goldin = true;
-
-
+                    textdisplay.text = "<u>אפס:</u> עדיף שאנסה מהתחלה בכך שארוקן את המיכל בלחיצה על המקש E במקלדת";
                 }
-                
-            }
 
+
+
+                /*  if (howmac > 5)
+                  {
+                      textdisplay.text = "כל הכבודדד!!!";
+                      if (posin == false && goldin == false)
+                      {
+                          Instantiate(positem);
+                          Instantiate(Goldwin1);
+                          // poski = new InventoryItem(positem.GetComponent<SpriteRenderer>().sprite, 1, 1, "Posking", "postion for king");
+                          // InvatoryForUSe.GetComponent<InventoryGUI>().additem(poski);
+                          posin = true;
+                          goldin = true;
+                          wallexit.GetComponent<BoxCollider2D>().enabled = true;
+
+                      }
+
+                  }*/
+
+            }
         }
     }
 

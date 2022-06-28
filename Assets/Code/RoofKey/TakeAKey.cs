@@ -45,7 +45,12 @@ public class TakeAKey : MonoBehaviour
     public bool AllIn = false;
 
 
+    public GameObject gold;
+    public GameObject item;
+    public bool golds = false;
+    public bool items = false;
 
+    public bool donemis = false;
 
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -155,11 +160,11 @@ public class TakeAKey : MonoBehaviour
             if (collision.gameObject.GetComponent<NumberOnSign>().isText()!=true)
             {
                 signNum = collision.gameObject.GetComponent<NumberOnSign>().NumAtSign();
-                textdisplay.text = "הו! אנחנו מעל בית מגורים מספר " + signNum + "\n" + "כלומר עליך לפתוח את הדירה באמצעות מפתח עם פס 1" + "\n" + "במידה ויש כזה ברשותך אז תעמוד מתחת לשלט והקישו t במקלדת";
+                textdisplay.text = "<u>החתול שלוש:</u>" + "הו! אנחנו מעל בית מגורים מספר " + signNum + "\n" + "כלומר עליך לפתוח את הדירה באמצעות מפתח עם פס 1" + "\n" + "במידה ויש כזה ברשותך אז תעמוד מתחת לשלט והקישו t במקלדת";
             }
             else
             {
-                textdisplay.text = "כל הכבוד! נראה שכבר הצלחתם לפתוח את הדלת של הבית הזה";
+                textdisplay.text = "<u>החתול שלוש:</u>" + "כל הכבוד! נראה שכבר הצלחתם לפתוח את הדלת של הבית הזה";
             }
             
             
@@ -207,6 +212,7 @@ public class TakeAKey : MonoBehaviour
                             num = signNum;
                             Keys.Remove(signNum);
                             deleted++;
+                            Destroy(KeyList[indexlocation]); 
 
 
                             Debug.Log("the sign num is: " + signNum + "and the key number is: " + num);
@@ -217,14 +223,22 @@ public class TakeAKey : MonoBehaviour
                                 if (numtoopen == 0)
                                 {
                                     Debug.Log("well done you bring one key: " + numtoopen);
-                                    textdisplay.text = "כל הכבוד הצלחת לפתוח את הבית בהצלחה!";
+                                    textdisplay.text = "<u>החתול שלוש:</u>" + "כל הכבוד הצלחת לפתוח את הבית בהצלחה!";
                                     collision.gameObject.GetComponent<NumberOnSign>().AlradyUsed();
                                     SingleToon.getInstance().curmoney.gain(250);
                                      SingleToon.getInstance().curscore.raise(25);
-                                    Destroy(KeyList[indexlocation]);
+                                   
+                                    if (golds == false && items == false)
+                                    {
+                                        gold.GetComponent<SpriteRenderer>().enabled = true;
+                                        item.GetComponent<SpriteRenderer>().enabled = true;
+                                        gold.GetComponent<BoxCollider2D>().enabled = true;
+                                        item.GetComponent<BoxCollider2D>().enabled = true;
+                                    }
+                                    donemis = true;
                                 }
                                 else
-                                    textdisplay.text = "צריך להביא עוד מפתחות על מנת לפתוח את הדלת והם !" + "\n" + Thediviosr.ToArray().ToString();
+                                    textdisplay.text = "<u>החתול שלוש:</u>" + "צריך להביא עוד מפתחות על מנת לפתוח את הדלת והם !" + "\n" + Thediviosr.ToArray().ToString();
 
                             }
 
@@ -244,7 +258,7 @@ public class TakeAKey : MonoBehaviour
                                 if (i== numbersfordivide.Length)
                                 {
                                     Debug.Log("line 233 dont have a keys that needed");
-                                    textdisplay.text = "נראה שעדיין לא מצאתם מפתחות שמתאימים לדלת הזו, תמשיכו לחפש";
+                                    textdisplay.text = "<u>החתול שלוש:</u>" + "נראה שעדיין לא מצאתם מפתחות שמתאימים לדלת הזו, תמשיכו לחפש";
                                     i = i - 1;
                                     break;
 
@@ -270,7 +284,7 @@ public class TakeAKey : MonoBehaviour
                                 if (numtoopen == 0)
                                 {
                                     Debug.Log("well done you bring one key: " + numtoopen);
-                                    textdisplay.text = "כל הכבוד הצלחת לפתוח את הבית בהצלחה!";
+                                    textdisplay.text = "<u>החתול שלוש:</u>" + "כל הכבוד הצלחת לפתוח את הבית בהצלחה!";
                                     collision.gameObject.GetComponent<NumberOnSign>().AlradyUsed();
                                     SingleToon.getInstance().curmoney.gain(250);
                                     SingleToon.getInstance().curscore.raise(25);
@@ -280,13 +294,17 @@ public class TakeAKey : MonoBehaviour
                                 }
                                 else
                                 {
-                                    AllIn = false;
-                                    Debug.Log("well done you bring one key but you need more: " + (numtoopen-1));
-                                    textdisplay.text = "כל הכבוד הצלחת לפתוח את אחד ממפתחות הבית בהצלחה, כעת עליך למצוא את שאר המפתחות המתאימים!" + "\n" + "נשארו עוד " + (numtoopen) + " מפתחות";
-                                    collision.gameObject.GetComponent<NumberOnSign>().GonnaBeDone();
-                                    SingleToon.getInstance().curmoney.gain(100);
-                                    SingleToon.getInstance().curscore.raise(15);
-                                    Destroy(KeyList[indextodelete]);
+                                    if (donemis == false)
+                                    {
+                                        AllIn = false;
+                                        Debug.Log("well done you bring one key but you need more: " + (numtoopen - 1));
+                                        textdisplay.text = "<u>החתול שלוש:</u>" + "כל הכבוד הצלחת לפתוח את אחד ממפתחות הבית בהצלחה, כעת עליך למצוא את שאר המפתחות המתאימים!" + "\n" + "נשארו עוד " + (numtoopen) + " מפתחות";
+                                        collision.gameObject.GetComponent<NumberOnSign>().GonnaBeDone();
+                                        SingleToon.getInstance().curmoney.gain(100);
+                                        SingleToon.getInstance().curscore.raise(15);
+                                        Destroy(KeyList[indextodelete]);
+                                    }
+                                    
                                 }
                             }
                         }
@@ -295,7 +313,7 @@ public class TakeAKey : MonoBehaviour
             }
         }
 
-        textdisplay.text = "עליך לפתוח את כל הדלתות לכל הבתים, יש לעשות זאת באמצעות מיצוי כל המפתחות שמספר הפינים שלהם הוא מספרים המתחלקים במספר שעל השלט" + "\n" + "יש להיזהר לא ליפול מגובה, אחרת צריך להתחיל את כל השלב מהתחלה!";
+        textdisplay.text = "<u>החתול שלוש:</u>" + "עליך לפתוח את כל הדלתות לכל הבתים, יש לעשות זאת באמצעות מיצוי כל המפתחות שמספר הפינים שלהם הוא מספרים המתחלקים במספר שעל השלט" + "\n" + "יש להיזהר לא ליפול מגובה, אחרת צריך להתחיל את כל השלב מהתחלה!";
 
 
 

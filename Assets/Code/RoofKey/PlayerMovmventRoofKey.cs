@@ -42,6 +42,7 @@ public class PlayerMovmventRoofKey : MonoBehaviour
     [SerializeField] public string Coin;
     public Transform coinswap;
     int gotcoins = 0;
+    public string gold;
 
 
 
@@ -149,10 +150,17 @@ public class PlayerMovmventRoofKey : MonoBehaviour
             Debug.Log("you have: " + gotcoins);
             SingleToon.getInstance().curmoney.gain(100);
             SingleToon.getInstance().curscore.raise(10);
-            
+
 
             //}
         }
+
+        if (collision.gameObject.tag == gold)
+        {
+            SingleToon.getInstance().curmoney.gain(1000);
+            SingleToon.getInstance().curscore.raise(100);
+        }
+
     }
 
 

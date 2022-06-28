@@ -33,19 +33,19 @@ public class AllDropsInOne : MonoBehaviour
 
 
         right.Add("cyan");
-        right.Add("cyan");//
+      //  right.Add("cyan");//
         right.Add("gold");
-        right.Add("gold");
+      //  right.Add("gold");
+       // right.Add("gold");//
         right.Add("gold");//
-        right.Add("gold");//
         right.Add("wine");
+       // right.Add("wine");//
+       // right.Add("wine");
+      //  right.Add("wine");
         right.Add("wine");//
-        right.Add("wine");
-        right.Add("wine");
         right.Add("wine");//
-        right.Add("wine");//
-        right.Add("gold");
-        right.Add("gold");
+       // right.Add("gold");
+      //  right.Add("gold");
         right.Add("gold");//
         right.Add("gold");//
     }
