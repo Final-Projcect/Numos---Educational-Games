@@ -868,7 +868,7 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 0
-  InvatoryForUSe: {fileID: 4501065120972529396, guid: 644f6ac733cf82b499e3f3f484368fbe, type: 3}
+  InvatoryForUSe: {fileID: 5040245962721713860, guid: 0dbc3f54a0188d045aee82313dc87f02, type: 3}
   Instruction: {fileID: 7860178163108872488, guid: 7233e5d38ae362a44b047fbb4b700f04, type: 3}
   textdisplay: {fileID: 932415258}
   Goldwin1: {fileID: 8133232242708646564}

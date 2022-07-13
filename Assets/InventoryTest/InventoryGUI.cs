@@ -37,6 +37,8 @@ public class InventoryGUI : MonoBehaviour
             inventory.Add(inventoryItem);
         }
 
+        //itemObj[1].GetComponent<SpriteRenderer>.enabled = false;
+
         cells = new List<GameObject>();
         CreateCells();
         PopulateCells();

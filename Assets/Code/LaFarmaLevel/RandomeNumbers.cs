@@ -46,6 +46,7 @@ public class RandomeNumbers : MonoBehaviour
     public bool ingold = false;
     public bool itemin = false;
     public GameObject item;
+    public string player;
     public GameObject gold;
 
 
@@ -101,10 +102,18 @@ public class RandomeNumbers : MonoBehaviour
 
 
     }
-
-    public bool FirstLevel ()
+    public void OnTriggerStay2D(Collider2D collision)
     {
-        
+        if (collision.gameObject.tag == player)
+        {
+            gold.GetComponent<SpriteRenderer>().enabled = false;
+            gold.GetComponent<BoxCollider2D>().enabled = false;
+        }
+    }
+
+    public bool FirstLevel()
+    {
+
         level = 1;
         int small = 0;
         int smallindex;
@@ -151,7 +160,7 @@ public class RandomeNumbers : MonoBehaviour
 
             SecondLevel();
         }
-    
+
         return ok;
     }
 
@@ -227,7 +236,8 @@ public class RandomeNumbers : MonoBehaviour
             if (itemin == false && ingold == false)
             {
                 Instantiate(item);
-                Instantiate(gold);
+                gold.GetComponent<SpriteRenderer>().enabled = true;
+                gold.GetComponent<BoxCollider2D>().enabled = true;
             }
             
             ok = true;
@@ -241,7 +251,10 @@ public class RandomeNumbers : MonoBehaviour
         return ok;
     }
 
-    public bool checkifcurrect(GameObject TailorCurrectStuff)
+
+    
+
+            public bool checkifcurrect(GameObject TailorCurrectStuff)
     {
         bool currect = false;
         if (level == 1)

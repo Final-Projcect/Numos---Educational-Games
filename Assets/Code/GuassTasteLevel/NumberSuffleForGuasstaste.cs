@@ -285,7 +285,8 @@ public class NumberSuffleForGuasstaste : MonoBehaviour
 
             if (goldins == false)
             {
-                Instantiate(gold);
+                gold.GetComponent<SpriteRenderer>().enabled = true;
+                gold.GetComponent<BoxCollider2D>().enabled = true;
                 goldins = true;
             }
 

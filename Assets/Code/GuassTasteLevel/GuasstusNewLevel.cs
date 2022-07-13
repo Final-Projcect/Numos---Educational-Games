@@ -213,13 +213,13 @@ public class GuasstusNewLevel : MonoBehaviour
             SingleToon.getInstance().curscore.raise(300);
             if (itemins==false)
             {
-                Instantiate(item);
+                item.SetActive(true);
                 itemins = true;
             }
 
             if (goldins==false)
             {
-                Instantiate(gold);
+                gold.SetActive(true);
                 goldins = true;
             }
 

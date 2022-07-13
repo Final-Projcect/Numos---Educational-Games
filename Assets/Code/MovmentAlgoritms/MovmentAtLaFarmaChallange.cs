@@ -84,6 +84,7 @@ public class MovmentAtLaFarmaChallange : MonoBehaviour
             Debug.Log("you have: " + getgold);
             SingleToon.getInstance().curmoney.gain(500);
             SingleToon.getInstance().curscore.raise(50);
+
         }
     }
 

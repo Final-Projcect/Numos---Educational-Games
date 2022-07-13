@@ -9973,7 +9973,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LeaderBarImage: {fileID: 941891224}
-  CurrentFill: {fileID: 1280323507}
+  CurrentFill: {fileID: 0}
 --- !u!114 &941891224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19420,7 +19420,6 @@ GameObject:
   - component: {fileID: 1280323503}
   - component: {fileID: 1280323504}
   - component: {fileID: 1280323505}
-  - component: {fileID: 1280323507}
   m_Layer: 0
   m_Name: AnimatedZero
   m_TagString: Player
@@ -19630,25 +19629,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57bbbfb0693c75847b3f85cab7faf1c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1280323507
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1280323498}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32e9d391c992a3f489f7d31499598392, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpForce: 10
-  jumpForceEffectByMomentomRatio: 0
-  speed: 4
-  Fill: 0
-  Instruction: {fileID: 7860178163108872488, guid: 7233e5d38ae362a44b047fbb4b700f04, type: 3}
-  textdisplay: {fileID: 806929546}
-  InvatoryForUSe: {fileID: 8604734364568313937, guid: b9860a6d52e2a394d97fddb0b6b0954c, type: 3}
 --- !u!1 &1292452625
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class NumberOnSign : MonoBehaviour
     TextMeshProUGUI textfind;
     bool unCheck = true;
     bool text = false;
+    public string player;
 
     public int NumAtSign()
     {
@@ -128,4 +129,14 @@ public class NumberOnSign : MonoBehaviour
 
         return true;
     }
+
+   /* private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == player)
+        {
+
+            collision.gameObject.GetComponent<TakeAKey>().KeyList.Clear;
+            
+        }
+    }*/
 }

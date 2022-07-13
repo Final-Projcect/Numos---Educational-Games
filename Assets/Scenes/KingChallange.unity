@@ -8376,7 +8376,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1269157392}
   - component: {fileID: 1269157391}
-  - component: {fileID: 1269157390}
   m_Layer: 0
   m_Name: Exit
   m_TagString: 2010
@@ -8384,18 +8383,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1269157390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1269157389}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 475b2c85461edf042a2c6e4e279cce73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1269157391
 BoxCollider2D:
   m_ObjectHideFlags: 0

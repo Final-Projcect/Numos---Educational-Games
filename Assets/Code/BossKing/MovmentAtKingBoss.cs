@@ -956,8 +956,8 @@ public class MovmentAtKingBoss : MonoBehaviour
 
             else
             {
-                Debug.Log(780);
-                textdisplay.text = "<u>אחד:</u> אני לא מאמין!!!! הצלחתם להוריד לה עוד זרוע, אבל אל חשש ואל דאגה, גם עם שתי זרועות היא אלופה מוחעחעחעחעחע!";
+                Debug.Log(959);///here
+                textdisplay.text = "<u>אחד:</u> אני לא מאמין!!!! הצלחתם להוריד לה עוד זרוע, אבל אל חשש ואל דאגה, גם עם זרוע אחת היא אלופה מוחעחעחעחעחע!";
                 inputdata.GetComponent<TMP_InputField>().text = string.Empty;
                 wopdone = true;
 

@@ -121,7 +121,8 @@ public class TakeAStone : MonoBehaviour
                             SingleToon.getInstance().curscore.raise(1500);
                             if (inisited == false)
                             {
-                                Instantiate(gold);
+                                gold.GetComponent<SpriteRenderer>().enabled = true;
+                                gold.GetComponent<BoxCollider2D>().enabled = true;
                                 inisited = true;
                             }
                         }
@@ -207,7 +208,8 @@ public class TakeAStone : MonoBehaviour
                             SingleToon.getInstance().curscore.raise(1500);
                             if (inisited == false)
                             {
-                                Instantiate(gold);
+                                gold.GetComponent<SpriteRenderer>().enabled = true;
+                                gold.GetComponent<BoxCollider2D>().enabled = true;
                                 inisited = true;
                             }
                         }
@@ -294,7 +296,9 @@ public class TakeAStone : MonoBehaviour
                             SingleToon.getInstance().curscore.raise(1500);
                             if (inisited == false)
                             {
-                                Instantiate(gold);
+                                //Instantiate(gold);
+                                gold.GetComponent<SpriteRenderer>().enabled = true;
+                                gold.GetComponent<BoxCollider2D>().enabled = true;
                                 inisited = true;
                             }
 
@@ -387,7 +391,8 @@ public class TakeAStone : MonoBehaviour
                             SingleToon.getInstance().curscore.raise(1500);
                             if (inisited == false)
                             {
-                                Instantiate(gold);
+                                gold.GetComponent<SpriteRenderer>().enabled = true;
+                                gold.GetComponent<BoxCollider2D>().enabled = true;
                                 inisited = true;
                             }
 
@@ -558,7 +563,8 @@ public class TakeAStone : MonoBehaviour
                             SingleToon.getInstance().curscore.raise(1500);
                             if (inisited == false)
                             {
-                                Instantiate(gold);
+                                gold.GetComponent<SpriteRenderer>().enabled = true;
+                                gold.GetComponent<BoxCollider2D>().enabled = true;
                                 inisited = true;
                             }
                         }
