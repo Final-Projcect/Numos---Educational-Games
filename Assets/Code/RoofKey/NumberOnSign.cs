@@ -31,7 +31,7 @@ public class NumberOnSign : MonoBehaviour
 
     public void AlradyUsed()
     {
-        textfind.text = "כל הכבוד";
+        textfind.text = "יפה";
         //text = true;
        // unCheck = true;
 

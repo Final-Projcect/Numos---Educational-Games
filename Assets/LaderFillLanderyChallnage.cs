@@ -14,29 +14,15 @@ public class LaderFillLanderyChallnage : MonoBehaviour
     public MovmentAtLanderyChallange CurrentFill;
     //Component CurrentFill;
 
-    int fill;
+  
     // Start is called before the first frame update
     void Start()
     {
-        fill = CurrentFill.Fill;
-        currentFilling = 0;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        fill = CurrentFill.Fill;
-        calcalateFiling = fill / LeaderBarAmount;
-        Debug.Log(calcalateFiling);
-        //lifebar.fillAmount = Mathf.MoveTowards(lifebar.fillAmount, calcalutelife, Time.deltaTime);
-        LeaderBarImage.fillAmount = Mathf.MoveTowards(LeaderBarImage.fillAmount, calcalateFiling, Time.deltaTime);
-
-        if (currentFilling == 1)
-        {
-            if (Input.GetKeyDown(KeyCode.L))
-                //get lader
-                currentFilling = 0;
-
-        }
     }
 }

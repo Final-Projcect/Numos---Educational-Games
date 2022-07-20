@@ -15,7 +15,7 @@ public class TakeAKey : MonoBehaviour
 
     //stack to contine the keys
     //public Stack<int> Keys = new Stack<int>();
-    public List<GameObject> KeyList = new List<GameObject>();
+    public Stack<GameObject> KeyList = new Stack<GameObject>();//was list before
     public List <int> Keys = new List<int>();
 
     public GameObject KeyStuff;
@@ -47,6 +47,7 @@ public class TakeAKey : MonoBehaviour
 
     public GameObject gold;
     public GameObject item;
+    public GameObject exit;
     public bool golds = false;
     public bool items = false;
 
@@ -59,6 +60,7 @@ public class TakeAKey : MonoBehaviour
 
         if (collision.gameObject.tag == key)
         {
+            Debug.Log("line 63");
             if (numofkeys == 0)
             {
                 //collect key
@@ -79,10 +81,11 @@ public class TakeAKey : MonoBehaviour
                 //put the key into the stack (becouse we allways check witch is the new key and use him first)
                 //Keys.Push(num);
                 Keys.Add(num);
+                Debug.Log("the key nums is:" + num);
          
 
                 //added the key object into a list
-                KeyList.Add(KeyStuff);
+                KeyList.Push(KeyStuff);
 
                 //count the number of keys
                 numofkeys++;
@@ -94,6 +97,7 @@ public class TakeAKey : MonoBehaviour
 
             else if (numofkeys > 0 && KeyList.Contains(collision.gameObject) != true )
             {
+                Debug.Log("line 100");
                 //collect key
                 KeyStuff = collision.gameObject;
                 KeyStuffParent = collision.transform.parent;
@@ -134,13 +138,15 @@ public class TakeAKey : MonoBehaviour
                 //put the key into the stack (becouse we allways check witch is the new key and use him first)
                 //Keys.Push(num);
                 Keys.Add(num);
-
+                Debug.Log("line 139 : the key nums is:" + num );
                 //added the key object into a list
-                KeyList.Add(KeyStuff);
+                KeyList.Push(KeyStuff);
 
                 //count the number of keys
+
                 numofkeys++;
                 index++;
+                Debug.Log("num of keys is: " + numberofkeys + "index is: " + index);
                 Debug.Log("----------------------i have more then a one key yofido" + " his num is: " + number + "-----------");
             }
 
@@ -157,6 +163,7 @@ public class TakeAKey : MonoBehaviour
 
         if (collision.gameObject.tag == sign)
         {
+            //Debug.Log("line 164 sign");
             if (collision.gameObject.GetComponent<NumberOnSign>().isText()!=true)
             {
                 signNum = collision.gameObject.GetComponent<NumberOnSign>().NumAtSign();
@@ -164,6 +171,7 @@ public class TakeAKey : MonoBehaviour
             }
             else
             {
+             //   Debug.Log("line 172 sign");
                 textdisplay.text = "<u>החתול שלוש:</u>" + "כל הכבוד! נראה שכבר הצלחתם לפתוח את הדלת של הבית הזה";
             }
             
@@ -184,6 +192,7 @@ public class TakeAKey : MonoBehaviour
                     signNum = collision.gameObject.GetComponent<NumberOnSign>().NumAtSign();
                     diviosrs = collision.gameObject.GetComponent<NumberOnSign>().Divisors(signNum);
                     Thediviosr = collision.gameObject.GetComponent<NumberOnSign>().TheDivisiors(signNum);
+                    Debug.Log("the sign num is: " + signNum + "and the key number is: " + num + "line 188");
 
                     //num = Keys.Pop();
                     bool contains = false;
@@ -191,6 +200,7 @@ public class TakeAKey : MonoBehaviour
                     {
                         contains = Keys.Contains(signNum);
                         Debug.Log("the contains state is: " + contains);
+                        Debug.Log("the sign num is: " + signNum + "and the key number is: " + num + "line 196");
                     }
 
                     if (signNum > 1)
@@ -200,25 +210,36 @@ public class TakeAKey : MonoBehaviour
                         Debug.Log("i am here 183: " + signNum);
                         AllIn = false;
                         contains = true;
+                        Debug.Log("the sign num is: " + signNum + "and the key number is: " + num + "line 205");
                     }
 
                     int indexlocation = Keys.IndexOf(signNum);
+                    Debug.Log("current index is:" + indexlocation + " the signnum is: " + signNum);
                     if (contains == true)
                     {
                         Debug.Log("line 189 + the diviorsrs is: " + diviosrs);
                         if (diviosrs == 1)
                         {
+                             indexlocation = Keys.IndexOf(signNum);
+                            Debug.Log("current indexlocation is:" + indexlocation + " the signnum is: " + signNum);
                             Debug.Log("line 192");
                             num = signNum;
                             Keys.Remove(signNum);
                             deleted++;
-                            Destroy(KeyList[indexlocation]); 
-
+                            if (KeyList.Count > 0)
+                            {
+                                KeyStuff = KeyList.Pop();
+                                Destroy(KeyStuff);
+                                collision.gameObject.GetComponent<NumberOnSign>().AlradyUsed();
+                            }
+                            
+                            Debug.Log("the sign num is: " + signNum + "and the key number is: " + num + "line 219");
 
                             Debug.Log("the sign num is: " + signNum + "and the key number is: " + num);
                             //bool HaveBeen = collision.gameObject.GetComponent<NumberOnSign>().unCheck;
                             if (signNum == num)
                             {
+                                Debug.Log("the sign num is: " + signNum + "and the key number is: " + num + "line 227");
                                 int numtoopen = collision.gameObject.GetComponent<NumberOnSign>().NumberToOpen(diviosrs)-1;
                                 if (numtoopen == 0)
                                 {
@@ -227,9 +248,12 @@ public class TakeAKey : MonoBehaviour
                                     collision.gameObject.GetComponent<NumberOnSign>().AlradyUsed();
                                     SingleToon.getInstance().curmoney.gain(250);
                                      SingleToon.getInstance().curscore.raise(25);
-                                   
+                                    exit.SetActive(true);
+
+                                    Debug.Log("the sign num is: " + signNum + "and the key number is: " + num + "line 236");
                                     if (golds == false && items == false)
                                     {
+                                        Debug.Log("finish level line 240");
                                         gold.GetComponent<SpriteRenderer>().enabled = true;
                                         item.GetComponent<SpriteRenderer>().enabled = true;
                                         gold.GetComponent<BoxCollider2D>().enabled = true;
@@ -239,7 +263,7 @@ public class TakeAKey : MonoBehaviour
                                 }
                                 else
                                     textdisplay.text = "<u>החתול שלוש:</u>" + "צריך להביא עוד מפתחות על מנת לפתוח את הדלת והם !" + "\n" + Thediviosr.ToArray().ToString();
-
+                                Debug.Log("the sign num is: " + signNum + "and the key number is: " + num + "line 248");
                             }
 
 
@@ -263,7 +287,7 @@ public class TakeAKey : MonoBehaviour
                                     break;
 
                                 }
-
+                                Debug.Log("the sign num is: " + signNum + "and the key number is: " + num + "line 273");
                             }
 
 
@@ -276,20 +300,30 @@ public class TakeAKey : MonoBehaviour
                                // {
                                     indextodelete = Keys.IndexOf(num);
                                 //}
+                                indexlocation = Keys.IndexOf(num);
+                                Debug.Log("current indexlocation is:" + indexlocation + " the signnum is: " + num);
                                 Keys.Remove(num);
+                                if (KeyList.Count>0)
+                                {
+                                    KeyStuff = KeyList.Pop();
+                                    Destroy(KeyStuff);
+                                    collision.gameObject.GetComponent<NumberOnSign>().AlradyUsed();
+                                }
+                               
                                 deleted++;
-
-                                Debug.Log("the sign num is: " + signNum + "and the key number is: " + num);
+                                Debug.Log("the sign num is: " + signNum + "and the key number is: " + num + "line 285");
+                                //Debug.Log("the sign num is: " + signNum + "and the key number is: " + num +"line 285");
                                 int numtoopen = collision.gameObject.GetComponent<NumberOnSign>().NumberToOpen(diviosrs);
                                 if (numtoopen == 0)
                                 {
                                     Debug.Log("well done you bring one key: " + numtoopen);
+                                    Debug.Log("the sign num is: " + signNum + "and the key number is: " + num + "line 294");
                                     textdisplay.text = "<u>החתול שלוש:</u>" + "כל הכבוד הצלחת לפתוח את הבית בהצלחה!";
                                     collision.gameObject.GetComponent<NumberOnSign>().AlradyUsed();
                                     SingleToon.getInstance().curmoney.gain(250);
                                     SingleToon.getInstance().curscore.raise(25);
                                     AllIn = true;
-                                    Destroy(KeyList[i]);
+                                    
 
                                 }
                                 else
@@ -298,11 +332,19 @@ public class TakeAKey : MonoBehaviour
                                     {
                                         AllIn = false;
                                         Debug.Log("well done you bring one key but you need more: " + (numtoopen - 1));
+                                        Debug.Log("the sign num is: " + signNum + "and the key number is: " + num + "line 310");
                                         textdisplay.text = "<u>החתול שלוש:</u>" + "כל הכבוד הצלחת לפתוח את אחד ממפתחות הבית בהצלחה, כעת עליך למצוא את שאר המפתחות המתאימים!" + "\n" + "נשארו עוד " + (numtoopen) + " מפתחות";
                                         collision.gameObject.GetComponent<NumberOnSign>().GonnaBeDone();
                                         SingleToon.getInstance().curmoney.gain(100);
                                         SingleToon.getInstance().curscore.raise(15);
-                                        Destroy(KeyList[indextodelete]);
+                                        if (KeyList.Count > 0)
+                                        {
+                                            KeyStuff = KeyList.Pop();
+                                            
+                                            Destroy(KeyStuff);
+                                            collision.gameObject.GetComponent<NumberOnSign>().AlradyUsed();
+                                        }
+//                                        Destroy(KeyList[indextodelete]);
                                     }
                                     
                                 }
