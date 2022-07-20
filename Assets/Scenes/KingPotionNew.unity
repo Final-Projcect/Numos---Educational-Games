@@ -5679,6 +5679,7 @@ MonoBehaviour:
   CyanPotion: {fileID: 1808636504}
   GoldPotion: {fileID: 152830534}
   WinePotine: {fileID: 679816286}
+  reseted: 0
 --- !u!61 &1151074357
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6626,6 +6627,7 @@ MonoBehaviour:
   CyanPotion: {fileID: 1808636504}
   GoldPotion: {fileID: 152830534}
   WinePotine: {fileID: 679816286}
+  BigBuck: {fileID: 1151074352}
 --- !u!61 &1437475323
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10334,7 +10336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d68443227090a604ab8fa474cb9207d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: 
+  Player: Player
 --- !u!4 &2401073871104560088
 Transform:
   m_ObjectHideFlags: 0

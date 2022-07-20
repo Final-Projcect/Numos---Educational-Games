@@ -12,6 +12,7 @@ public class AllDropsInOne : MonoBehaviour
     public GameObject CyanPotion;
     public GameObject GoldPotion;
     public GameObject WinePotine;
+    
 
     private int numcyan = 0;
     private int numgold = 0;
@@ -25,6 +26,8 @@ public class AllDropsInOne : MonoBehaviour
 
     List<string> colors = new List<string>();
     List<string> right = new List<string>();
+
+    public bool reseted = false;
 
     void Start()
     {
@@ -50,20 +53,30 @@ public class AllDropsInOne : MonoBehaviour
         right.Add("gold");//
     }
 
+    public void resetbug()
+    {
+        Debug.Log("im clean");
+            colors.Clear();
+            reseted = false;
+    }
     public int marge()
     {
+
+      
         oldnumcyan = numcyan;
         numcyan = CyanPotion.GetComponent<HowManyDropsAlredy>().dropsinbag();
 
         oldnumgold = numgold;
         numgold = GoldPotion.GetComponent<HowManyDropsAlredy>().dropsinbag();
 
-        oldnumwine = oldnumwine;
+        oldnumwine = numwine;
         numwine = WinePotine.GetComponent<HowManyDropsAlredy>().dropsinbag();
         all = numcyan + numgold + numwine;
 
+
         return all;
         //return all;
+
 
     }
 
@@ -80,7 +93,7 @@ public class AllDropsInOne : MonoBehaviour
             colors.Add("gold");
         }
 
-        if (oldnumwine != oldnumwine)
+        if (oldnumwine != numwine)
         {
             colors.Add("wine");
         }
@@ -94,11 +107,57 @@ public class AllDropsInOne : MonoBehaviour
     {
         if (colors.SequenceEqual(right) == true)
         {
+            string[] colorsOutput = colors.ToArray();
+            string[] RightOutput = right.ToArray();
+            /*Debug.LogWarning("right the colors output is: " );
+            Debug.Log(string.Join("\n", colorsOutput));
+            Debug.LogWarning("right the right output is: ");
+            Debug.Log(string.Join("\n", RightOutput));*/
+            if (reseted == false)
+            {
+                Debug.Log("right colors is: ");
+                foreach (string item in colors)
+                {
+                    Debug.Log(item);
+                }
+
+                Debug.Log("right right is: ");
+                foreach (string item in right)
+                {
+                    Debug.Log(item);
+                }
+                reseted = true;
+            }
+           
             return true;
         }
 
         else
+        {
+            string colorsOutput = colors.ToArray().ToString();
+            string RightOutput = right.ToArray().ToString();
+            //Debug.LogWarning("right the colors output is: ");
+            // Debug.Log(string.Join("\n", colorsOutput));
+            //  Debug.LogWarning("right the right output is: ");
+            //  Debug.Log(string.Join("\n", RightOutput));
+            if (reseted == false)
+            {
+                Debug.Log("wrong colors is: ");
+                foreach (string item in colors)
+                {
+                    Debug.Log(item);
+                }
+
+                Debug.Log("wrong right is: ");
+                foreach (string item in right)
+                {
+                    Debug.Log(item);
+                }
+                reseted = true;
+            }
             return false;
+        }
+           
 
     }
 }

@@ -82,6 +82,7 @@ public class MovmentAtPotion : MonoBehaviour
     public GameObject CyanPotion;
     public GameObject GoldPotion;
     public GameObject WinePotine;
+    public GameObject BigBuck;
 
 
     // The initial position of the GameObject
@@ -151,6 +152,8 @@ public class MovmentAtPotion : MonoBehaviour
             CyanPotion.GetComponent<HowManyDropsAlredy>().reset();
             GoldPotion.GetComponent<HowManyDropsAlredy>().reset();
             WinePotine.GetComponent<HowManyDropsAlredy>().reset();
+            //BigBuck.GetComponent<AllDropsInOne>().reseted = true;
+            BigBuck.GetComponent<AllDropsInOne>().resetbug();
             return transform.position;
         }
 
@@ -476,6 +479,7 @@ public class MovmentAtPotion : MonoBehaviour
 
         if (collision.gameObject.tag == allpotion)
         {
+            
             howmac = collision.gameObject.GetComponent<AllDropsInOne>().marge();
             if (howmac == 8)
 
