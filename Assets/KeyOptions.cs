@@ -9,7 +9,9 @@ public class KeyOptions : MonoBehaviour
     public TMP_Dropdown Options;
     public string KeyToChange;
     public KeyPanel keylink;
-    
+
+
+
     public string[] KeyValues = new string[4] { "right", "left" , "up" , "down" };
     public List<string> KeyCharsValues = new List<string>();
     private void Start()
@@ -84,14 +86,13 @@ public class KeyOptions : MonoBehaviour
                 KeyPanel.EnterToPlaces = Pushed;
                 break;
         }
+
+        
             
-
-
-
-
-
-
     }
-    
+
+
+
+
 
 }

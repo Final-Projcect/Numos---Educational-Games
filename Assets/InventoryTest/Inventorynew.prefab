@@ -208,11 +208,6 @@ MonoBehaviour:
   itemFocusPanel: {fileID: 4501065121758049897}
   itemObj:
   - {fileID: 2441862350627730225, guid: ed7a4fd31f4e6ee4c854f8276dda144c, type: 3}
-  - {fileID: 4320082705511066833, guid: 6e4ca4d900731494d800f1888a66f61d, type: 3}
-  - {fileID: 1779810430209694983, guid: 243c38bb8a688d144bb5b8e82e5eb00a, type: 3}
-  - {fileID: 6692709630644413057, guid: a1a4bdaa298a8454cafafff03ef0c125, type: 3}
-  - {fileID: 2523960124041133686, guid: bc7634a95569cf34abada12c50e0e826, type: 3}
-  - {fileID: 3174368073791291275, guid: c54d48b6bb921cd429b1ab27ac97658f, type: 3}
 --- !u!114 &4501065120972529394
 MonoBehaviour:
   m_ObjectHideFlags: 0

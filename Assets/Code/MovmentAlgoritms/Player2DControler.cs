@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-
-
-
+using UnityEngine.UI;
 
 public class Player2DControler : MonoBehaviour
 {
@@ -50,6 +47,10 @@ public class Player2DControler : MonoBehaviour
     public string ongrassland1;
     public string ongrassland2;
 
+    public AudioSource audio;
+    public Sprite[] AudioSprite;
+    public Image audioimage;
+
 
     public Vector3 OnTriggerEnter2D(Collider2D col)
     {
@@ -61,6 +62,20 @@ public class Player2DControler : MonoBehaviour
             return col.transform.position;
         }
         return col.transform.position;
+    }
+
+    public void soundmang()
+    {
+        if (audio.volume==1)
+        {
+            audio.volume = 0;
+            audioimage.sprite = AudioSprite[0];
+        }
+        else
+        {
+            audio.volume = 1;
+            audioimage.sprite = AudioSprite[1];
+        }
     }
 
     private void OnTriggerStay2D(Collider2D collision)

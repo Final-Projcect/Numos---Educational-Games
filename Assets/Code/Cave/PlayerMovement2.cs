@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerMovement2 : MonoBehaviour
 {
@@ -27,6 +28,10 @@ public class PlayerMovement2 : MonoBehaviour
     [SerializeField] private LayerMask wallLayer;
     public GameObject InvatoryForUSe;
 
+    [Header("Audio")]
+    public AudioSource audio;
+    public Sprite[] AudioSprite;
+    public Image audioimage;
 
     private Rigidbody2D body;
     private BoxCollider2D boxCollider;
@@ -102,6 +107,19 @@ public class PlayerMovement2 : MonoBehaviour
     public int getgold = 0;
 
 
+    public void soundmang()
+    {
+        if (audio.volume == 1)
+        {
+            audio.volume = 0;
+            audioimage.sprite = AudioSprite[0];
+        }
+        else
+        {
+            audio.volume = 1;
+            audioimage.sprite = AudioSprite[1];
+        }
+    }
 
     private void Awake()
     {
