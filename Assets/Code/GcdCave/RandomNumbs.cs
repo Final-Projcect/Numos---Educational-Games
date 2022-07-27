@@ -11,6 +11,7 @@ public class RandomNumbs : MonoBehaviour
     public TextMeshProUGUI[] FirstKingPackage;
     public TextMeshProUGUI[] Stand1Package;
     public TextMeshProUGUI[] Stand2Package;
+    public TextMeshProUGUI[] standslevel2;
 
     //check if need random
     bool randomize;
@@ -118,6 +119,10 @@ public class RandomNumbs : MonoBehaviour
             else
                  thirdnum = firstnum;
             //availableNumbersLev2.Add(basicsdiv[thirdnum]);
+            standslevel2[0].text = (UnityEngine.Random.Range(50, 100)).ToString();
+            standslevel2[1].text = basics[thirdnum].ToString();
+            standslevel2[2].text = (UnityEngine.Random.Range(50, 100)).ToString();
+
             availableNumbersLev2.Add(basics[thirdnum]);
             Debug.Log("third num is:" + basics[thirdnum]);
             Debug.Log("firstnum is: " + basics[firstnum]);

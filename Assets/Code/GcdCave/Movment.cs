@@ -85,6 +85,9 @@ public class Movment : MonoBehaviour
     public string water;
     public bool lev2done = false;
     public GameObject cantgoafter;
+    public GameObject KingHead21;
+    public GameObject KingHead22;
+    public GameObject KingHead23;
 
     //change the places after finish level2
     public GameObject waterground1;
@@ -225,7 +228,12 @@ public class Movment : MonoBehaviour
             //int secondside = Int32.Parse(ranums.Stand1Package[2].text);
             //Debug.Log("the second is: " + secondside);
 
-
+            bool correct = false;
+            if (standonstand.GetComponent<WrongStand>().num() == KingHead23.GetComponent<NumOnking>().NumAtking().ToString())
+            {
+                Debug.Log("7777777done");
+                correct = true;
+            }
             // if (standnum == oneside || standnum == secondside)
             if (good == true && lev2done == false)
             {
@@ -237,6 +245,7 @@ public class Movment : MonoBehaviour
                     //Instantiate(ground1);
                     Destroy(waterground1);
                     lev2done = true;
+                    Destroy(KingHead23);
                     Destroy(stand1);
                     Destroy(stand2);
                     Destroy(stand3);
@@ -271,6 +280,7 @@ public class Movment : MonoBehaviour
             standonstand = collision.gameObject;
             //int standnum = standonstand.GetComponent<NumOnking>().NumAtking();
             bool good = standonstand.GetComponent<WrongStand>().right;
+        
 
             if (good == true && lev3done == false)
             {

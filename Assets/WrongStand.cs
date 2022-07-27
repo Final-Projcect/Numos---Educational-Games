@@ -21,4 +21,9 @@ public class WrongStand : MonoBehaviour
            // textdisplay.text =  "תנסה שוב, עלית על הקרש הפסל הלא נכון";
         }
     }
+
+    public string num()
+    {
+        return textdisplay.text.ToString();
+    }
 }
