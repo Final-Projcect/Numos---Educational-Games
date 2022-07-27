@@ -21,6 +21,7 @@ public class MovementAtPlusShop : MonoBehaviour
     public TextMeshProUGUI textdisplay;
 
     public GameObject InvatoryForUSe;
+    public GameObject Shop;
 
     protected Vector3 NewPosition()
     {
@@ -65,6 +66,14 @@ public class MovementAtPlusShop : MonoBehaviour
             return transform.position;
         }
 
+        //A key down -> giving things in levels
+        else if (Input.GetKeyDown(KeyCode.A) || Input.GetKey("a"))
+        {
+            //need to put here an option to gave object and destroy it
+            Shop.SetActive(true);
+            return transform.position;
+        }
+
 
         else
         {
@@ -77,9 +86,19 @@ public class MovementAtPlusShop : MonoBehaviour
 
     private void Start()
     {
-        textdisplay.text = "<u> הרוכל הנוכל:  </u> אני מתנצל אך תפסת אותנו באמצע שיפוצים, כמו שאתה רואה סופת חול פקדה את המקום ואנחנו כרגע מסדרים אותו, אשמח אם תשוב לבקר אותנו בהמשך, על מנת לצאת מהחנות יש לפנות שמאלה עד הסוף.";
+        textdisplay.text = "<u> הרוכל הנוכל:  </u>  הו שלום שלום אני רואה שפעם ראשונה שהגעת , האם אוכל לעניין אותך בכמה מהפריטים המיוחדים שיש אצלי בחנות?" + "\n" + "א. במידה וכן, יש ללחוץ על המקש A" + "\n" + "ב. במידה ולא, אז הדלת משמאל, חוצפה פשוט!" ; ;
     }
 
+    public void CloseShop()
+    {
+        Shop.SetActive(false);
+        textdisplay.text = "<u> הרוכל הנוכל:  </u>  הו שלום שלום אני רואה שפעם ראשונה שהגעת , האם אוכל לעניין אותך בכמה מהפריטים המיוחדים שיש אצלי בחנות?" + "\n" + "א. במידה וכן, יש ללחוץ על המקש A" + "\n" + "ב. במידה ולא, אז הדלת משמאל, חוצפה פשוט!"; ;
+    }
+
+    public void ShopNoEnoghtMoney()
+    {
+        textdisplay.text = "<u> הרוכל הנוכל:  </u> חוששני שאין לך מספיק מטבעות כדי לקנות את המוצר, ממליץ לך לבצע משימות ולהגיע שוב בעתיד";
+    }
 
 
     // Update is called once per frame

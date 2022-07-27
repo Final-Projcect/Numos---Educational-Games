@@ -5,6 +5,7 @@ using UnityEngine;
 public class landing : MonoBehaviour
 {
     public string land;
+  
     public GameObject boat;
     public GameObject boat2;
     public int num;
@@ -25,5 +26,7 @@ public class landing : MonoBehaviour
                 boat2.GetComponent<SpriteRenderer>().enabled = false;
             }
         }
+
+      
     }
 }

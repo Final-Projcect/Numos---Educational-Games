@@ -23,6 +23,7 @@ public class MovmentAtLaFarma : MonoBehaviour
     public TextMeshProUGUI textdisplay;
 
     public GameObject InvatoryForUSe;
+    public GameObject shop;
 
     protected Vector3 NewPosition()
     {
@@ -62,12 +63,18 @@ public class MovmentAtLaFarma : MonoBehaviour
         {
             if (exist==false)
             {
-                textdisplay.text = "אם אתה צריך עזרה או רוצה לעשות משהו אחר תקרא לי על ידי לחיצה על המקש X";
-                fordestroy = Instantiate(Instruction);
+                textdisplay.text = "<u> מר פפיון:  </u>  מה דעתך על המוצרים בחנות?";
+                shop.SetActive(true);
                 exist = true; 
             }
 
-                
+            //P key down -> giving things in levels
+        else if (Input.GetKeyDown(KeyCode.P) || Input.GetKey("p"))
+        {
+            //need to put here an option to gave object and destroy it
+            SceneManager.LoadScene("PausePage");
+            return transform.position;
+        }         
 
             return transform.position; //ToDo Pass into ohter secne
         }
@@ -132,6 +139,16 @@ public class MovmentAtLaFarma : MonoBehaviour
     }
 
 
+    public void CloseShop()
+    {
+        shop.SetActive(false);
+        textdisplay.text = " <u> מר פפיון:  </u> שלום ברוכים הבאים למתפרה שלי, כיצד תרצו להנעים את זמנכם כאן?" + "\n" + "                  א . לעזור לי במשימה - לחצו על A" + "\n" + "                   ב. לקנות בחנות - לחצו על B                   " + "\n" + "                   ג. לבקש רמז - לחצו על C" + "\n" + "                   ד. להסתובב מסביב - לחצו על D";
+    }
+
+    public void ShopNoEnoghtMoney()
+    {
+        textdisplay.text = "<u> מר פפיון:  </u> חוששני שאין לך מספיק מטבעות כדי לקנות את המוצר, ממליץ לך לבצע משימות ולהגיע שוב בעתיד";
+    }
 
     // Update is called once per frame
     void Update()

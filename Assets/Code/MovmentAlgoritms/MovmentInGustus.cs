@@ -22,6 +22,7 @@ public class MovmentInGustus : MonoBehaviour
     public TMPro.TextMeshProUGUI textdisplay;
 
     public GameObject InvatoryForUSe;
+    public GameObject shop;
 
     protected Vector3 NewPosition()
     {
@@ -61,8 +62,8 @@ public class MovmentInGustus : MonoBehaviour
         {
             if (exist == false)
             {
-                textdisplay.text = "אני חוזרת לשמור על האש, אם אתה מחפש אותי קרא לי על ידי לחיצה על X";
-                fordestroy = Instantiate(Instruction);
+                textdisplay.text = "<u> הנחשה דאס:  </u>  מה דעתך על המוצרים בחנות?";
+                shop.SetActive(true);
                 exist = true;
             }
 
@@ -120,6 +121,13 @@ public class MovmentInGustus : MonoBehaviour
             return transform.position;
         }
 
+        //P key down -> giving things in levels
+        else if (Input.GetKeyDown(KeyCode.P) || Input.GetKey("p"))
+        {
+            //need to put here an option to gave object and destroy it
+            SceneManager.LoadScene("PausePage");
+            return transform.position;
+        }
 
         else
          {
@@ -129,12 +137,22 @@ public class MovmentInGustus : MonoBehaviour
 
 
 
-        
+    public void CloseShop()
+    {
+        shop.SetActive(false);
+        textdisplay.text = "<u> הנחשה דאס:  </u> שלום ברוכים הבאים למאפייה שלי, התכבדו ותרגישו בנוח באוהלי הקט?" + "\n" + "                        א. לעזור לי במשימה - יש ללחוץ על A" + "\n" + "                        ב. לקנות משהו - יש ללחוץ על B" + "\n" + "                        ג. לבקש רמז - יש ללחוץ על C" + "\n" + "                        ד. להסתובב מסביב - יש ללחוץ על D";
+    }
+
+    public void ShopNoEnoghtMoney()
+    {
+        textdisplay.text = "<u> הנחשה דאס:  </u> חוששני שאין לך מספיק מטבעות כדי לקנות את המוצר, ממליץ לך לבצע משימות ולהגיע שוב בעתיד";
+    }
 
 
 
-        // Update is called once per frame
-        void Update()
+
+    // Update is called once per frame
+    void Update()
         {
             transform.position = NewPosition();
 
